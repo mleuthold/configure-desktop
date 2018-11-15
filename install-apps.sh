@@ -10,6 +10,7 @@ sudo snap install sublime-text --classic
 sudo snap install vlc
 sudo snap install whatsdesk
 sudo snap install shellcheck --edge
+sudo snap install helm --classic
 
 # apt
 sudo apt install 4kyoutubetomp3
