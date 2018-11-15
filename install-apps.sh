@@ -34,3 +34,9 @@ chsh -s $(which zsh)
 
 # OH-MY-ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# BATS
+git clone https://github.com/bats-core/bats-core.git
+cd bats-core
+sudo ./install.sh /usr/local
+cd
