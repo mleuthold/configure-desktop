@@ -14,7 +14,8 @@ sudo snap install helm --classic
 
 # install tmux with mouse mode to drag&drop/select windows
 sudo snap install tmux --classic
-echo "set -g mouse on" > $HOME/.tmux.conf
+sudo apt install xclip
+echo 'set -g mouse on\nbind -t vi-copy y copy-pipe "xclip -sel clip -i"' > $HOME/.tmux.conf
 
 # apt
 sudo apt install 4kyoutubetomp3
