@@ -12,6 +12,10 @@ sudo snap install whatsdesk
 sudo snap install shellcheck --edge
 sudo snap install helm --classic
 
+# install tmux with mouse mode to drag&drop/select windows
+sudo snap install tmux --classic
+echo "set -g mouse on" > $HOME/.tmux.conf
+
 # apt
 sudo apt install 4kyoutubetomp3
 sudo apt install caffeine
