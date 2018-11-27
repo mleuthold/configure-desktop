@@ -12,11 +12,6 @@ sudo snap install whatsdesk
 sudo snap install shellcheck --edge
 sudo snap install helm --classic
 
-# install tmux with mouse mode to drag&drop/select windows
-sudo snap install tmux --classic
-sudo apt install xclip
-echo 'set -g mouse on\nbind -t vi-copy y copy-pipe "xclip -sel clip -i"' > $HOME/.tmux.conf
-
 # apt
 sudo apt install 4kyoutubetomp3
 sudo apt install caffeine
@@ -25,6 +20,7 @@ sudo apt install filezilla
 sudo apt install guake
 sudo apt install virtualbox
 sudo apt install maven
+sudo apt install terminator
 
 # MINIKUBE
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.30.0/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin/ && rm minikube
