@@ -11,6 +11,7 @@ sudo snap install vlc
 sudo snap install whatsdesk
 sudo snap install shellcheck --edge
 sudo snap install helm --classic
+sudo snap install go --classic
 
 # apt
 sudo apt install 4kyoutubetomp3
@@ -21,6 +22,7 @@ sudo apt install guake
 sudo apt install virtualbox
 sudo apt install maven
 sudo apt install terminator
+sudo apt install golang-glide
 
 # MINIKUBE
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.30.0/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin/ && rm minikube
