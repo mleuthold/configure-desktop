@@ -12,6 +12,7 @@ sudo snap install whatsdesk
 sudo snap install shellcheck --edge
 sudo snap install helm --classic
 sudo snap install go --classic
+sudo snap install ansible-kz6fittycent --edge
 
 # apt
 sudo apt install 4kyoutubetomp3
@@ -24,6 +25,7 @@ sudo apt install maven
 sudo apt install terminator
 sudo apt install golang-glide
 sudo apt install libghc-yaml-dev # yaml2json
+sudo apt install ansible
 
 
 # MINIKUBE
