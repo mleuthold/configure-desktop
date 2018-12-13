@@ -65,3 +65,10 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# GRADLE
+wget https://services.gradle.org/distributions/gradle-5.0-bin.zip
+sudo mkdir -p /opt/gradle
+sudo unzip -d /opt/gradle gradle-5.0-bin.zip
+export PATH=$PATH:/opt/gradle/gradle-5.0/bin
+gradle -v
