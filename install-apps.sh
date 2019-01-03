@@ -38,7 +38,12 @@ minikube config set cpus 4
 minikube config set memory 10240
 
 # DOCKER
-sudo snap install docker
+# https://unix.stackexchange.com/questions/363048/unable-to-locate-package-docker-ce-on-a-64bit-ubuntu
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic test"
+sudo apt install docker-ce
+
 sudo groupadd docker
 sudo usermod -aG docker $USER
 docker run hello-world
