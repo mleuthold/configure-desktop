@@ -12,6 +12,7 @@ sudo snap install whatsdesk
 sudo snap install shellcheck --edge
 sudo snap install go --classic
 sudo snap install ansible-kz6fittycent --edge
+sudo snap install terraform
 
 # apt
 sudo apt install 4kyoutubetomp3
