@@ -15,6 +15,7 @@ sudo snap install ansible-kz6fittycent --edge
 sudo snap install terraform
 sudo snap install ruby --classic
 sudo snap install opera
+sudo snap install drawio --edge
 
 # apt
 sudo apt install 4kyoutubetomp3
