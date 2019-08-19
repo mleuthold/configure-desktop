@@ -32,9 +32,9 @@ sudo apt install ansible
 sudo apt install i3lock-fancy
 
 # HELM
-curl https://raw.githubusercontent.com/helm/helm/master/scripts/get > get_helm.sh
+curl -LO https://git.io/get_helm.sh
 chmod 700 get_helm.sh
-sudo ./get_helm.sh
+./get_helm.sh
 
 # MINIKUBE
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.30.0/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin/ && rm minikube
