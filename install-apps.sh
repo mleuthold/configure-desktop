@@ -16,6 +16,7 @@ sudo snap install terraform
 sudo snap install ruby --classic
 sudo snap install opera
 sudo snap install drawio --edge
+sudo snap install task --classic
 
 # apt
 sudo apt install 4kyoutubetomp3
