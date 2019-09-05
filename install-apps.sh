@@ -53,6 +53,14 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 docker run hello-world
 
+# DOCKER-COMPOSE
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+# bash completion
+sudo curl -L https://raw.githubusercontent.com/docker/compose/1.24.1/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
+# zsh completion
+
+
 # ZSH
 sudo apt install zsh
 chsh -s $(which zsh)
@@ -61,6 +69,7 @@ chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # add plugins for auto complete to ZSH
 sed -i.bak 's/^plugins=.*/plugins=(zsh-autosuggestions zsh-syntax-highlighting kubectl/' $HOME/.zshrc
+# plugins=(zsh-autosuggestions zsh-syntax-highlighting kubectl kubetail git sudo docker docker-compose)
 
 # BATS
 git clone https://github.com/bats-core/bats-core.git
