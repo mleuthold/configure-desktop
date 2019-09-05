@@ -68,8 +68,7 @@ chsh -s $(which zsh)
 # OH-MY-ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # add plugins for auto complete to ZSH
-sed -i.bak 's/^plugins=.*/plugins=(zsh-autosuggestions zsh-syntax-highlighting kubectl/' $HOME/.zshrc
-# plugins=(zsh-autosuggestions zsh-syntax-highlighting kubectl kubetail git sudo docker docker-compose)
+sed -i.bak 's/^plugins=.*/plugins=(zsh-autosuggestions zsh-syntax-highlighting kubectl kubetail git sudo docker docker-compose)/' $HOME/.zshrc
 
 # BATS
 git clone https://github.com/bats-core/bats-core.git
