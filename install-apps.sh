@@ -12,7 +12,6 @@ sudo snap install whatsdesk
 sudo snap install shellcheck --edge
 sudo snap install go --classic
 sudo snap install ansible-kz6fittycent --edge
-sudo snap install terraform
 sudo snap install ruby --classic
 sudo snap install opera
 sudo snap install drawio --edge
