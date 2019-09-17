@@ -31,6 +31,19 @@ sudo apt install libghc-yaml-dev # yaml2json
 sudo apt install ansible
 sudo apt install i3lock-fancy
 
+# TERRAFORM
+wget https://releases.hashicorp.com/terraform/0.12.8/terraform_0.12.8_linux_amd64.zip
+unzip terraform_0.12.8_linux_amd64.zip
+sudo mv terraform /usr/local/bin/
+sudo chown root:root /usr/local/bin/terraform
+sudo chmod 755 /usr/local/bin/terraform
+
+# TERRAGRUNT
+wget https://github.com/gruntwork-io/terragrunt/releases/download/v0.19.24/terragrunt_linux_amd64
+sudo mv terragrunt_linux_amd64 /usr/local/bin/terragrunt
+sudo chown root:root /usr/local/bin/terragrunt
+sudo chmod 755 /usr/local/bin/terragrunt
+
 # HELM
 curl -LO https://git.io/get_helm.sh
 chmod 700 get_helm.sh
