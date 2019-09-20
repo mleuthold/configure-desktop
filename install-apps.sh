@@ -50,7 +50,8 @@ chmod 700 get_helm.sh
 ./get_helm.sh
 
 # MINIKUBE
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.30.0/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin/ && rm minikube
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+   && sudo install minikube-linux-amd64 /usr/local/bin/minikube
 minikube config set cpus 4
 minikube config set memory 10240
 
