@@ -16,6 +16,7 @@ sudo snap install ruby --classic
 sudo snap install opera
 sudo snap install drawio --edge
 sudo snap install task --classic
+sudo snap install teams-for-linux
 
 # apt
 sudo apt install 4kyoutubetomp3
