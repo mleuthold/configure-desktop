@@ -14,7 +14,7 @@ sudo snap install go --classic
 sudo snap install ansible-kz6fittycent --edge
 sudo snap install ruby --classic
 sudo snap install opera
-sudo snap install drawio --edge
+sudo snap install drawio
 sudo snap install task --classic
 sudo snap install teams-for-linux
 
