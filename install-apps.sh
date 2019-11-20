@@ -33,11 +33,13 @@ sudo apt install ansible
 sudo apt install i3lock-fancy
 
 # TERRAFORM
-wget https://releases.hashicorp.com/terraform/0.12.9/terraform_0.12.9_linux_amd64.zip
-unzip terraform_0.12.9_linux_amd64.zip
-sudo mv terraform /usr/local/bin/
-sudo chown root:root /usr/local/bin/terraform
-sudo chmod 755 /usr/local/bin/terraform
+MY_TERRAFORM_VERSION=0.12.16
+wget https://releases.hashicorp.com/terraform/"$MY_TERRAFORM_VERSION"/terraform_"$MY_TERRAFORM_VERSION"_linux_amd64.zip \
+   && unzip terraform_"$MY_TERRAFORM_VERSION"_linux_amd64.zip \
+   && sudo mv terraform /usr/local/bin/ \
+   && sudo chown root:root /usr/local/bin/terraform \
+   && sudo chmod 755 /usr/local/bin/terraform \
+   && terraform version | grep "$MY_TERRAFORM_VERSION"
 
 # TERRAGRUNT
 wget https://github.com/gruntwork-io/terragrunt/releases/download/v0.19.24/terragrunt_linux_amd64
