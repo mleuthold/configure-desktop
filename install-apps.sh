@@ -42,10 +42,12 @@ wget https://releases.hashicorp.com/terraform/"$MY_TERRAFORM_VERSION"/terraform_
    && terraform version | grep "$MY_TERRAFORM_VERSION"
 
 # TERRAGRUNT
-wget https://github.com/gruntwork-io/terragrunt/releases/download/v0.19.24/terragrunt_linux_amd64
-sudo mv terragrunt_linux_amd64 /usr/local/bin/terragrunt
-sudo chown root:root /usr/local/bin/terragrunt
-sudo chmod 755 /usr/local/bin/terragrunt
+MY_TERRAGRUNT_VERSION=v0.21.6
+wget https://github.com/gruntwork-io/terragrunt/releases/download/"$MY_TERRAGRUNT_VERSION"/terragrunt_linux_amd64 \
+   && sudo mv terragrunt_linux_amd64 /usr/local/bin/terragrunt \
+   && sudo chown root:root /usr/local/bin/terragrunt \
+   && sudo chmod 755 /usr/local/bin/terragrunt \
+   && terragrunt --version | grep "$MY_TERRAGRUNT_VERSION"
 
 # HELM
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh
