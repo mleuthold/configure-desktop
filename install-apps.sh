@@ -76,6 +76,7 @@ wget https://github.com/docker/docker-credential-helpers/releases/download/v0.6.
    && tar -xf docker-credential-pass-v0.6.3-amd64.tar.gz \
    && chmod +x docker-credential-pass \
    && sudo mv docker-credential-pass /usr/local/bin/
+# sed -i '0,/{/s/{/{\n\t"credsStore": "pass",/' ~/.docker/config.json
 
 # DOCKER-COMPOSE
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
