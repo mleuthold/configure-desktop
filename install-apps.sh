@@ -72,6 +72,11 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 docker run hello-world
 
+wget https://github.com/docker/docker-credential-helpers/releases/download/v0.6.3/docker-credential-pass-v0.6.3-amd64.tar.gz \
+   && tar -xf docker-credential-pass-v0.6.3-amd64.tar.gz \
+   && chmod +x docker-credential-pass \
+   && sudo mv docker-credential-pass /usr/local/bin/
+
 # DOCKER-COMPOSE
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
