@@ -31,6 +31,7 @@ sudo apt install golang-glide
 sudo apt install libghc-yaml-dev # yaml2json
 sudo apt install ansible
 sudo apt install i3lock-fancy
+sudo apt install pass
 
 # TERRAFORM
 MY_TERRAFORM_VERSION=0.12.16
