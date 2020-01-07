@@ -34,7 +34,7 @@ sudo apt install i3lock-fancy
 sudo apt install pass
 
 # TERRAFORM
-MY_TERRAFORM_VERSION=0.12.16
+MY_TERRAFORM_VERSION=0.12.18
 wget https://releases.hashicorp.com/terraform/"$MY_TERRAFORM_VERSION"/terraform_"$MY_TERRAFORM_VERSION"_linux_amd64.zip \
    && unzip terraform_"$MY_TERRAFORM_VERSION"_linux_amd64.zip \
    && sudo mv terraform /usr/local/bin/ \
