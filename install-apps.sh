@@ -34,24 +34,14 @@ sudo apt install i3lock-fancy
 sudo apt install pass
 
 # TERRAFORM
-#MY_TERRAFORM_VERSION=0.12.18
-#wget https://releases.hashicorp.com/terraform/"$MY_TERRAFORM_VERSION"/terraform_"$MY_TERRAFORM_VERSION"_linux_amd64.zip \
-#   && unzip terraform_"$MY_TERRAFORM_VERSION"_linux_amd64.zip \
-#   && sudo mv terraform /usr/local/bin/ \
-#   && sudo chown root:root /usr/local/bin/terraform \
-#   && sudo chmod 755 /usr/local/bin/terraform \
-#   && terraform version | grep "$MY_TERRAFORM_VERSION"
+git clone https://github.com/tfutils/tfenv.git ~/.tfenv
+sudo ln -s ~/.tfenv/bin/* /usr/local/bin
+tfenv install 0.12.20
 
 # TERRAGRUNT
 git clone https://github.com/cunymatthieu/tgenv.git ~/.tgenv
 sudo ln -s ~/.tgenv/bin/* /usr/local/bin
 tgenv install 0.21.11
-#MY_TERRAGRUNT_VERSION=v0.21.6
-#wget https://github.com/gruntwork-io/terragrunt/releases/download/"$MY_TERRAGRUNT_VERSION"/terragrunt_linux_amd64 \
-#   && sudo mv terragrunt_linux_amd64 /usr/local/bin/terragrunt \
-#   && sudo chown root:root /usr/local/bin/terragrunt \
-#   && sudo chmod 755 /usr/local/bin/terragrunt \
-#   && terragrunt --version | grep "$MY_TERRAGRUNT_VERSION"
 
 # HELM
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh
