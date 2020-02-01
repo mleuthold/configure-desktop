@@ -138,3 +138,14 @@ sudo ln -s /opt/kafka/bin/*.sh /usr/local/bin
 
 export KAFKA_HOME=/opt/kafka
 export PATH=$PATH:$KAFKA_HOME/bin
+
+# GOLANG
+VERSION=1.13.7
+OS=linux
+ARCH=amd64
+wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz
+sudo tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
+
+# export PATH=$PATH:/usr/local/go/bin
+file=/etc/profile
+grep -q '^export PATH=$PATH:/usr/local/go/bin' $file && sed -i 's/^export PATH=$PATH:\/usr\/local\/go\/bin.*/export PATH=$PATH:\/usr\/local\/go\/bin/' $file || echo 'export PATH=$PATH:/usr/local/go/bin' >> $file
