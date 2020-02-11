@@ -34,22 +34,10 @@ sudo apt install i3lock-fancy
 sudo apt install pass
 
 # PYTHON
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-sudo ln -s ~/.pyenv/bin/* /usr/local/bin
-
 # add Python build dependencies for Ubuntu
 sudo apt-get update; sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+curl https://pyenv.run | bash
 pyenv install 3.8.1
-
-# add to env of ~/.zshrc
-#if command -v pyenv 1>/dev/null 2>&1; then
-#  eval "$(pyenv init -)"
-#fi
-
-# use Python by pyenv in this directory by setting up local .python-version file
-# pyenv local 3.8.1
-# use Python by pyenv based on environment variable
-# env PYENV_VERSION=3.8.1 python --version
 
 # TERRAFORM
 git clone https://github.com/tfutils/tfenv.git ~/.tfenv
