@@ -39,6 +39,11 @@ sudo apt-get update; sudo apt-get install --no-install-recommends make build-ess
 curl https://pyenv.run | bash
 pyenv install 3.8.1
 
+# PYENV
+#export PATH="/home/marleu/.pyenv/bin:$PATH"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
+
 # TERRAFORM
 git clone https://github.com/tfutils/tfenv.git ~/.tfenv
 sudo ln -s ~/.tfenv/bin/* /usr/local/bin
