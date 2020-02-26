@@ -33,6 +33,13 @@ sudo apt install ansible
 sudo apt install i3lock-fancy
 sudo apt install pass
 
+# JQ (latest: 1.6)
+# remove old version 1.5: sudo apt remove jq
+wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
+   && mv jq-linux64 /usr/local/bin/jq
+   && chmod +x /usr/local/bin/jq
+   && chown root:root /usr/local/bin/jq
+
 # PYTHON
 # add Python build dependencies for Ubuntu
 sudo apt-get update; sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
