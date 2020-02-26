@@ -17,6 +17,7 @@ sudo snap install opera
 sudo snap install drawio
 sudo snap install task --classic
 sudo snap install teams-for-linux
+sudo snap install jq --edge
 
 # apt
 sudo apt install 4kyoutubetomp3
@@ -32,13 +33,7 @@ sudo apt install libghc-yaml-dev # yaml2json
 sudo apt install ansible
 sudo apt install i3lock-fancy
 sudo apt install pass
-
-# JQ (latest: 1.6)
-# remove old version 1.5: sudo apt remove jq
-wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
-   && mv jq-linux64 /usr/local/bin/jq
-   && chmod +x /usr/local/bin/jq
-   && chown root:root /usr/local/bin/jq
+sudo apt remove jq
 
 # PYTHON
 # add Python build dependencies for Ubuntu
