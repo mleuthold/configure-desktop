@@ -20,6 +20,8 @@ sudo snap install vlc
 sudo snap install whatsdesk
 sudo snap install yq
 
+sudo snap set system refresh.retain=2
+
 # apt
 sudo apt install 4kyoutubetomp3
 sudo apt install ansible
