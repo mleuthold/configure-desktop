@@ -18,21 +18,22 @@ sudo snap install task --classic
 sudo snap install teams-for-linux
 sudo snap install vlc
 sudo snap install whatsdesk
+sudo snap install yq
 
 # apt
 sudo apt install 4kyoutubetomp3
+sudo apt install ansible
 sudo apt install caffeine
 sudo apt install easytag
 sudo apt install filezilla
-sudo apt install guake
-sudo apt install virtualbox
-sudo apt install maven
-sudo apt install terminator
 sudo apt install golang-glide
-sudo apt install libghc-yaml-dev # yaml2json
-sudo apt install ansible
+sudo apt install guake
 sudo apt install i3lock-fancy
+sudo apt install libghc-yaml-dev # yaml2json
+sudo apt install maven
 sudo apt install pass
+sudo apt install terminator
+sudo apt install virtualbox
 sudo apt remove jq
 
 # PYTHON
