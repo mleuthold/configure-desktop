@@ -2,22 +2,22 @@
 
 # snaps
 sudo snap install chromium
+sudo snap install drawio
+sudo snap install firefox
 sudo snap install gimp
+sudo snap install go --classic
 sudo snap install intellij-idea-community --classic
+sudo snap install jq --edge
 sudo snap install keepassxc
 sudo snap install kubectl --classic
-sudo snap install sublime-text --classic
-sudo snap install vlc
-sudo snap install whatsdesk
-sudo snap install shellcheck --edge
-sudo snap install go --classic
-sudo snap install ansible-kz6fittycent --edge
-sudo snap install ruby --classic
 sudo snap install opera
-sudo snap install drawio
+sudo snap install ruby --classic
+sudo snap install shellcheck --edge
+sudo snap install sublime-text --classic
 sudo snap install task --classic
 sudo snap install teams-for-linux
-sudo snap install jq --edge
+sudo snap install vlc
+sudo snap install whatsdesk
 
 # apt
 sudo apt install 4kyoutubetomp3
