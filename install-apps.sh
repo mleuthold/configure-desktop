@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 # snaps
-sudo snap install chromium
 sudo snap install drawio
-sudo snap install firefox
 sudo snap install gimp
 sudo snap install go --classic
 sudo snap install intellij-idea-community --classic
