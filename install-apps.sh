@@ -21,6 +21,7 @@ sudo snap install whatsdesk
 sudo snap install yq
 
 sudo snap set system refresh.retain=2
+ln -s /var/lib/snapd/desktop/applications/ ~/.local/share/applications/snap
 
 # apt
 sudo apt install 4kyoutubetomp3
