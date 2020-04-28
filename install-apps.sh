@@ -35,6 +35,7 @@ sudo apt install maven
 sudo apt install pass
 sudo apt install terminator
 sudo apt install virtualbox
+sudo apt install wine64
 sudo apt remove jq
 
 # PYTHON
