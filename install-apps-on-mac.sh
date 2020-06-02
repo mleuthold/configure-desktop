@@ -1,3 +1,6 @@
+### install tools
+
+xcode-select --install
 
 ### install PyENV
 
