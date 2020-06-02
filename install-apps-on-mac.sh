@@ -12,3 +12,11 @@ brew install pyenv
 
 # install specific Python version
 #pyenv install 3.8.2
+
+### install JAVA
+
+brew tap AdoptOpenJDK/openjdk
+
+# install specific JAVA version
+#brew cask install adoptopenjdk8
+#brew cask install adoptopenjdk11
