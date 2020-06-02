@@ -23,3 +23,7 @@ brew tap AdoptOpenJDK/openjdk
 # install specific JAVA version
 #brew cask install adoptopenjdk8
 #brew cask install adoptopenjdk11
+
+### install Taskfile
+
+brew install go-task/tap/go-task
