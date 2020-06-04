@@ -32,3 +32,9 @@ brew install go-task/tap/go-task
 
 curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
 sudo installer -pkg AWSCLIV2.pkg -target /
+
+### install ZSH autocompletion
+brew install zsh-autosuggestions
+
+# put to .zshrc
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
