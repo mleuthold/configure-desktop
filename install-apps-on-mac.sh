@@ -25,3 +25,5 @@ brew install zsh-autosuggestions
 # source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 brew install gpg
+
+brew cask install google-cloud-sdk
