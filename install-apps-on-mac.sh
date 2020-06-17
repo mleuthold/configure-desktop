@@ -28,3 +28,6 @@ brew install zsh-autosuggestions
 brew install gpg
 
 brew cask install google-cloud-sdk
+brew install telnet
+
+
