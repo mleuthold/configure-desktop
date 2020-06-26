@@ -30,4 +30,4 @@ brew install gpg
 brew cask install google-cloud-sdk
 brew install telnet
 
-
+brew install vault
