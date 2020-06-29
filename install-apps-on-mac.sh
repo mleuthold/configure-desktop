@@ -29,6 +29,10 @@ brew install gpg
 
 brew cask install google-cloud-sdk
 # export CLOUDSDK_PYTHON=/Users/martin.leuthold/.pyenv/versions/3.8.2/bin/python
+### Google Cloud Tools
+#source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+#source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+
 brew install telnet
 
 brew install vault
