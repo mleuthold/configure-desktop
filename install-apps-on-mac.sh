@@ -28,6 +28,7 @@ brew install zsh-autosuggestions
 brew install gpg
 
 brew cask install google-cloud-sdk
+# export CLOUDSDK_PYTHON=/Users/martin.leuthold/.pyenv/versions/3.7.7/bin/python
 brew install telnet
 
 brew install vault
