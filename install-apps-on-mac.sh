@@ -31,3 +31,10 @@ brew cask install google-cloud-sdk
 brew install telnet
 
 brew install vault
+
+# TERRAFORM
+brew install tfenv
+
+# TERRAGRUNT
+brew tap alextodicescu/tgenv
+brew install tgenv
