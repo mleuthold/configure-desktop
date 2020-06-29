@@ -38,3 +38,7 @@ brew install tfenv
 # TERRAGRUNT
 brew tap alextodicescu/tgenv
 brew install tgenv
+
+# AWS AUTOCOMPLETER
+#autoload bashcompinit && bashcompinit
+#complete -C '/usr/local/bin/aws_completer' aws
