@@ -47,3 +47,7 @@ brew install tgenv
 # AWS AUTOCOMPLETER
 #autoload bashcompinit && bashcompinit
 #complete -C '/usr/local/bin/aws_completer' aws
+
+# fix locale on MacOS for Python
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
