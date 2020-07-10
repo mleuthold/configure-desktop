@@ -51,3 +51,8 @@ brew install tgenv
 # fix locale on MacOS for Python
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+git clone https://github.com/sawadashota/go-task-completions.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/task
+# Enable it in your .zshrc by adding it to your plugin list and reloading the completion:
+#plugins=(… task)
+#autoload -U compinit && compinit
