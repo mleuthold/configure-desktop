@@ -56,3 +56,6 @@ git clone https://github.com/sawadashota/go-task-completions.git ${ZSH_CUSTOM:=~
 # Enable it in your .zshrc by adding it to your plugin list and reloading the completion:
 #plugins=(… task)
 #autoload -U compinit && compinit
+
+# CONCOURSE
+brew cask install fly
