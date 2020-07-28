@@ -33,6 +33,9 @@ brew cask install google-cloud-sdk
 #source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 #source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
+gcloud config set survey/disable_prompts True
+gcloud config set component_manager/disable_update_check true
+
 brew install telnet
 
 brew install vault
