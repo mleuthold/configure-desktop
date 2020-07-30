@@ -5,7 +5,13 @@ brew install pyenv
 brew install pyenv-virtualenv
 
 # add shims to your shell
-#echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\n  eval "$(pyenv virtualenv-init -)"\nfi' >> ~/.zshrc
+### PYENV
+# src: https://github.com/pyenv/pyenv#installation
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
 # optional, but recommended:
 #brew install openssl readline sqlite3 xz zlib
 # install specific Python version
