@@ -5,6 +5,7 @@ brew install pyenv
 brew install pyenv-virtualenv
 
 # add shims to your shell
+# put this into ~/.zshrc
 ### PYENV
 # src: https://github.com/pyenv/pyenv#installation
 if command -v pyenv 1>/dev/null 2>&1; then
