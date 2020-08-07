@@ -11,7 +11,6 @@ grep -qxF "### PYENV BEGIN
 command='if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
-  abc
 fi' perl -0p -i.bak -e 's/### PYENV BEGIN\n(.|\n)*### PYENV END/### PYENV BEGIN\n$ENV{command}\n### PYENV END/' ~/.zshrc
 
 # optional, but recommended:
