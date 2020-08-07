@@ -13,6 +13,11 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+command='if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi' perl -0pe 's/### PYENV BEGIN\n(.|\n)*\n### PYENV END/###PYENV BEGIN\n$ENV{command}\n### PYENV END/' .zshrc
+
 # optional, but recommended:
 #brew install openssl readline sqlite3 xz zlib
 # install specific Python version
