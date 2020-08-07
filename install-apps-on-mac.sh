@@ -8,10 +8,11 @@ brew install pyenv-virtualenv || brew install pyenv-virtualenv
 grep -qxF "### PYENV BEGIN
 ### PYENV END" ~/.zshrc || echo "\n### PYENV BEGIN\n### PYENV END" >> ~/.zshrc
 
-command='''if command -v pyenv 1>/dev/null 2>&1; then
+command='if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
-fi''' perl -0pe 's/### PYENV BEGIN\n(.|\n)*\n### PYENV END/### PYENV BEGIN\n$ENV{command}\n### PYENV END/' ~/.zshrc
+  abc
+fi' perl -0p -i.bak -e 's/### PYENV BEGIN\n(.|\n)*### PYENV END/### PYENV BEGIN\n$ENV{command}\n### PYENV END/' ~/.zshrc
 
 # optional, but recommended:
 #brew install openssl readline sqlite3 xz zlib
@@ -29,7 +30,7 @@ command='''jdk() {
         # java -version
  }
 
-jdk 1.8''' perl -0pe 's/### JAVA BEGIN\n(.|\n)*\n### JAVA END/### JAVA BEGIN\n$ENV{command}\n### JAVA END/' ~/.zshrc
+jdk 1.8''' perl -0p -i.bak -e 's/### JAVA BEGIN\n(.|\n)*### JAVA END/### JAVA BEGIN\n$ENV{command}\n### JAVA END/' ~/.zshrc
 
 brew tap AdoptOpenJDK/openjdk
 # install specific JAVA version
@@ -46,7 +47,7 @@ brew install zsh-autosuggestions
 grep -qxF "### ZSH BEGIN
 ### ZSH END" ~/.zshrc || echo "\n### ZSH BEGIN\n### ZSH END" >> ~/.zshrc
 
-command='''source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh''' perl -0pe 's/### ZSH BEGIN\n(.|\n)*\n### ZSH END/### ZSH BEGIN\n$ENV{command}\n### ZSH END/' ~/.zshrc
+command='''source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh''' perl -0p -i.bak -e 's/### ZSH BEGIN\n(.|\n)*### ZSH END/### ZSH BEGIN\n$ENV{command}\n### ZSH END/' ~/.zshrc
 
 brew install gpg | brew upgrade gnupg
 
@@ -60,7 +61,7 @@ grep -qxF "### GCLOUD BEGIN
 
 command='''export CLOUDSDK_PYTHON=~/.pyenv/versions/3.7.7/envs/gcp/bin/python
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc''' perl -0pe 's/### GCLOUD BEGIN\n(.|\n)*\n### GCLOUD END/### GCLOUD BEGIN\n$ENV{command}\n### GCLOUD END/' ~/.zshrc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc''' perl -0p -i.bak -e 's/### GCLOUD BEGIN\n(.|\n)*### GCLOUD END/### GCLOUD BEGIN\n$ENV{command}\n### GCLOUD END/' ~/.zshrc
 
 
 gcloud components install kubectl
@@ -86,7 +87,7 @@ grep -qxF "### AWS BEGIN
 ### AWS END" ~/.zshrc || echo "\n### AWS BEGIN\n### AWS END" >> ~/.zshrc
 
 command='''autoload bashcompinit && bashcompinit
-complete -C '/usr/local/bin/aws_completer' aws''' perl -0pe 's/### AWS BEGIN\n(.|\n)*\n### AWS END/### AWS BEGIN\n$ENV{command}\n### AWS END/' ~/.zshrc
+complete -C '/usr/local/bin/aws_completer' aws''' perl -0p -i.bak -e 's/### AWS BEGIN\n(.|\n)*### AWS END/### AWS BEGIN\n$ENV{command}\n### AWS END/' ~/.zshrc
 
 
 # fix locale on MacOS for Python
@@ -94,14 +95,14 @@ grep -qxF "### PYTHON BEGIN
 ### PYTHON END" ~/.zshrc || echo "\n### PYTHON BEGIN\n### PYTHON END" >> ~/.zshrc
 
 command='''export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8''' perl -0pe 's/### PYTHON BEGIN\n(.|\n)*\n### PYTHON END/### PYTHON BEGIN\n$ENV{command}\n### PYTHON END/' ~/.zshrc
+export LANG=en_US.UTF-8''' perl -0p -i.bak -e 's/### PYTHON BEGIN\n(.|\n)*### PYTHON END/### PYTHON BEGIN\n$ENV{command}\n### PYTHON END/' ~/.zshrc
 
 
 # TASK
 grep -qxF "### TASK BEGIN
 ### TASK END" ~/.zshrc || echo "\n### TASK BEGIN\n### TASK END" >> ~/.zshrc
 
-command='''autoload -U compinit && compinit''' perl -0pe 's/### TASK BEGIN\n(.|\n)*\n### TASK END/### TASK BEGIN\n$ENV{command}\n### TASK END/' ~/.zshrc
+command='''autoload -U compinit && compinit''' perl -0p -i.bak -e 's/### TASK BEGIN\n(.|\n)*### TASK END/### TASK BEGIN\n$ENV{command}\n### TASK END/' ~/.zshrc
 
 git clone https://github.com/sawadashota/go-task-completions.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/task || true
 # Enable it in your .zshrc by adding it to your plugin list and reloading the completion:
@@ -117,4 +118,4 @@ brew cask install fly
 grep -qxF "### KUBECTL BEGIN
 ### KUBECTL END" ~/.zshrc || echo "\n### KUBECTL BEGIN\n### KUBECTL END" >> ~/.zshrc
 
-command='''[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)''' perl -0pe 's/### KUBECTL BEGIN\n(.|\n)*\n### KUBECTL END/### KUBECTL BEGIN\n$ENV{command}\n### KUBECTL END/' ~/.zshrc
+command='''[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)''' perl -0p -i.bak -e 's/### KUBECTL BEGIN\n(.|\n)*### KUBECTL END/### KUBECTL BEGIN\n$ENV{command}\n### KUBECTL END/' ~/.zshrc
