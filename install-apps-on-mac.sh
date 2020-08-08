@@ -111,7 +111,7 @@ git clone https://github.com/sawadashota/go-task-completions.git ${ZSH_CUSTOM:=~
 #plugins=(… task)
 
 # ZSH PLUGINS
-sed -i .bak 's/plugins=(.*)/\plugins=(git docker docker-compose task zsh-syntax-highlighting kubectl kubetail sudo)/' .zshrc
+sed -i .bak 's/plugins=(.*)/\plugins=(git docker docker-compose task zsh-syntax-highlighting kubectl kubetail sudo)/' ~/.zshrc
 
 # CONCOURSE
 brew cask install fly
