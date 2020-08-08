@@ -15,7 +15,7 @@ sudo snap install whatsdesk
 sudo snap install yq
 
 sudo snap set system refresh.retain=2
-ln -s /var/lib/snapd/desktop/applications/ ~/.local/share/applications/snap
+ln -s /var/lib/snapd/desktop/applications/ ~/.local/share/applications/snap || true
 
 # apt
 sudo apt install 4kyoutubetomp3
@@ -34,7 +34,16 @@ sudo apt install virtualbox
 sudo apt install wine64
 sudo apt remove jq
 
-# PYENV
+### ZSH
+sudo apt install zsh
+chsh -s $(which zsh)
+
+### OH-MY-ZSH
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# add plugins for auto complete to ZSH
+sed -i.bak 's/^plugins=.*/plugins=(zsh-autosuggestions zsh-syntax-highlighting kubectl kubetail git sudo docker docker-compose task)/' $HOME/.zshrc
+
+### PYENV
 curl https://pyenv.run | bash || true
 pyenv update
 
@@ -58,15 +67,30 @@ sudo apt-get update; sudo apt-get install --no-install-recommends make build-ess
 pyenv install --skip-existing 3.7.7
 pyenv install --skip-existing anaconda3-2020.02
 
-# TERRAFORM
+### TERRAFORM
 git clone https://github.com/tfutils/tfenv.git ~/.tfenv || true
 sudo ln -s ~/.tfenv/bin/* /usr/local/bin || true
 tfenv install 0.12.20
 
-# TERRAGRUNT
+### TERRAGRUNT
 git clone https://github.com/cunymatthieu/tgenv.git ~/.tgenv || true
 sudo ln -s ~/.tgenv/bin/* /usr/local/bin || true
 tgenv install 0.21.11
+
+### TASK
+grep -qxF "### TASK BEGIN
+### TASK END" ~/.zshrc || echo "\n### TASK BEGIN\n### TASK END" >> ~/.zshrc
+
+command='''autoload -U compinit && compinit''' perl -0p -i.bak -e 's/### TASK BEGIN\n(.|\n)*### TASK END/### TASK BEGIN\n$ENV{command}\n### TASK END/' ~/.zshrc
+
+git clone https://github.com/sawadashota/go-task-completions.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/task || true
+
+### PIP
+grep -qxF "### PIP BEGIN
+### PIP END" ~/.zshrc || echo "\n### PIP BEGIN\n### PIP END" >> ~/.zshrc
+
+command='eval "`pip completion --zsh`"
+compctl -K _pip_completion pip3' perl -0p -i.bak -e 's/### PIP BEGIN\n(.|\n)*### PIP END/### PIP BEGIN\n$ENV{command}\n### PIP END/' ~/.zshrc
 
 # TERRAFORM - KAFKA PROVIDER
 TERRAFORM_KAFKA_PROVIDER_VERSION=0.2.3
@@ -108,17 +132,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 # bash completion
 sudo curl -L https://raw.githubusercontent.com/docker/compose/1.24.1/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
-# zsh completion
 
-
-# ZSH
-sudo apt install zsh
-chsh -s $(which zsh)
-
-# OH-MY-ZSH
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-# add plugins for auto complete to ZSH
-sed -i.bak 's/^plugins=.*/plugins=(zsh-autosuggestions zsh-syntax-highlighting kubectl kubetail git sudo docker docker-compose task)/' $HOME/.zshrc
 
 # BATS
 git clone https://github.com/bats-core/bats-core.git
@@ -174,21 +188,3 @@ sudo tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
 # export PATH=$PATH:/usr/local/go/bin
 file=/etc/profile
 grep -q '^export PATH=$PATH:/usr/local/go/bin' $file && sed -i 's/^export PATH=$PATH:\/usr\/local\/go\/bin.*/export PATH=$PATH:\/usr\/local\/go\/bin/' $file || echo 'export PATH=$PATH:/usr/local/go/bin' >> $file
-
-
-# TASK
-grep -qxF "### TASK BEGIN
-### TASK END" ~/.zshrc || echo "\n### TASK BEGIN\n### TASK END" >> ~/.zshrc
-
-command='''autoload -U compinit && compinit''' perl -0p -i.bak -e 's/### TASK BEGIN\n(.|\n)*### TASK END/### TASK BEGIN\n$ENV{command}\n### TASK END/' ~/.zshrc
-
-git clone https://github.com/sawadashota/go-task-completions.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/task || true
-
-
-### PIP
-grep -qxF "### PIP BEGIN
-### PIP END" ~/.zshrc || echo "\n### PIP BEGIN\n### PIP END" >> ~/.zshrc
-
-command='eval "`pip completion --zsh`"
-compctl -K _pip_completion pip3' perl -0p -i.bak -e 's/### PIP BEGIN\n(.|\n)*### PIP END/### PIP BEGIN\n$ENV{command}\n### PIP END/' ~/.zshrc
-
