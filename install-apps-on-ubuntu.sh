@@ -35,14 +35,17 @@ sudo apt install wine64
 sudo apt remove jq
 
 # PYENV
-curl https://pyenv.run | bash
+curl https://pyenv.run | bash || true
 pyenv update
 
 # add shims to your shell
 grep -qxF "### PYENV BEGIN
 ### PYENV END" ~/.zshrc || echo "\n### PYENV BEGIN\n### PYENV END" >> ~/.zshrc
 
-command='if command -v pyenv 1>/dev/null 2>&1; then
+command='export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 fi' perl -0p -i.bak -e 's/### PYENV BEGIN\n(.|\n)*### PYENV END/### PYENV BEGIN\n$ENV{command}\n### PYENV END/' ~/.zshrc
