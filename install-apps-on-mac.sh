@@ -1,6 +1,8 @@
 xcode-select --install || true
 
 brew update
+
+# PYENV
 brew install pyenv || brew upgrade pyenv
 brew install pyenv-virtualenv || brew install pyenv-virtualenv
 
@@ -15,6 +17,7 @@ fi' perl -0p -i.bak -e 's/### PYENV BEGIN\n(.|\n)*### PYENV END/### PYENV BEGIN\
 
 # optional, but recommended:
 #brew install openssl readline sqlite3 xz zlib
+
 # install specific Python version
 pyenv install --skip-existing 3.7.7
 pyenv install --skip-existing anaconda3-2020.02
@@ -108,7 +111,7 @@ git clone https://github.com/sawadashota/go-task-completions.git ${ZSH_CUSTOM:=~
 #plugins=(… task)
 
 # ZSH PLUGINS
-sed -i .bak 's/plugins=(.*)/\plugins=(git docker docker-compose task abc)/' .zshrc
+sed -i .bak 's/plugins=(.*)/\plugins=(git docker docker-compose task zsh-syntax-highlighting kubectl kubetail sudo)/' .zshrc
 
 # CONCOURSE
 brew cask install fly
