@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
 
 # snaps
-sudo snap install drawio
-sudo snap install gimp
-sudo snap install go --classic
 sudo snap install intellij-idea-community --classic
 sudo snap install jq --edge
 sudo snap install keepassxc
 sudo snap install kubectl --classic
-sudo snap install opera
 sudo snap install ruby --classic
 sudo snap install shellcheck --edge
 sudo snap install sublime-text --classic
@@ -165,3 +161,14 @@ sudo tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
 # export PATH=$PATH:/usr/local/go/bin
 file=/etc/profile
 grep -q '^export PATH=$PATH:/usr/local/go/bin' $file && sed -i 's/^export PATH=$PATH:\/usr\/local\/go\/bin.*/export PATH=$PATH:\/usr\/local\/go\/bin/' $file || echo 'export PATH=$PATH:/usr/local/go/bin' >> $file
+
+
+
+
+### PIP
+grep -qxF "### PIP BEGIN
+### PIP END" ~/.zshrc || echo "\n### PIP BEGIN\n### PIP END" >> ~/.zshrc
+
+command='eval "`pip completion --zsh`"
+compctl -K _pip_completion pip3' perl -0p -i.bak -e 's/### PIP BEGIN\n(.|\n)*### PIP END/### PIP BEGIN\n$ENV{command}\n### PIP END/' ~/.zshrc
+
