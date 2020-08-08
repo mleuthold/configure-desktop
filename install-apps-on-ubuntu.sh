@@ -34,25 +34,35 @@ sudo apt install virtualbox
 sudo apt install wine64
 sudo apt remove jq
 
-# PYTHON
+# PYENV
+curl https://pyenv.run | bash
+pyenv update
+
+# add shims to your shell
+grep -qxF "### PYENV BEGIN
+### PYENV END" ~/.zshrc || echo "\n### PYENV BEGIN\n### PYENV END" >> ~/.zshrc
+
+command='if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi' perl -0p -i.bak -e 's/### PYENV BEGIN\n(.|\n)*### PYENV END/### PYENV BEGIN\n$ENV{command}\n### PYENV END/' ~/.zshrc
+
+# optional, but recommended:
 # add Python build dependencies for Ubuntu
 sudo apt-get update; sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-curl https://pyenv.run | bash
-pyenv install 3.8.1
 
-# PYENV
-#export PATH="/home/marleu/.pyenv/bin:$PATH"
-#eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"
+# install specific Python version
+pyenv install --skip-existing 3.7.7
+pyenv install --skip-existing anaconda3-2020.02
 
 # TERRAFORM
-git clone https://github.com/tfutils/tfenv.git ~/.tfenv
-sudo ln -s ~/.tfenv/bin/* /usr/local/bin
+git clone https://github.com/tfutils/tfenv.git ~/.tfenv || true
+sudo ln -s ~/.tfenv/bin/* /usr/local/bin || true
 tfenv install 0.12.20
 
 # TERRAGRUNT
-git clone https://github.com/cunymatthieu/tgenv.git ~/.tgenv
-sudo ln -s ~/.tgenv/bin/* /usr/local/bin
+git clone https://github.com/cunymatthieu/tgenv.git ~/.tgenv || true
+sudo ln -s ~/.tgenv/bin/* /usr/local/bin || true
 tgenv install 0.21.11
 
 # TERRAFORM - KAFKA PROVIDER
@@ -105,7 +115,7 @@ chsh -s $(which zsh)
 # OH-MY-ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # add plugins for auto complete to ZSH
-sed -i.bak 's/^plugins=.*/plugins=(zsh-autosuggestions zsh-syntax-highlighting kubectl kubetail git sudo docker docker-compose)/' $HOME/.zshrc
+sed -i.bak 's/^plugins=.*/plugins=(zsh-autosuggestions zsh-syntax-highlighting kubectl kubetail git sudo docker docker-compose task)/' $HOME/.zshrc
 
 # BATS
 git clone https://github.com/bats-core/bats-core.git
@@ -163,6 +173,13 @@ file=/etc/profile
 grep -q '^export PATH=$PATH:/usr/local/go/bin' $file && sed -i 's/^export PATH=$PATH:\/usr\/local\/go\/bin.*/export PATH=$PATH:\/usr\/local\/go\/bin/' $file || echo 'export PATH=$PATH:/usr/local/go/bin' >> $file
 
 
+# TASK
+grep -qxF "### TASK BEGIN
+### TASK END" ~/.zshrc || echo "\n### TASK BEGIN\n### TASK END" >> ~/.zshrc
+
+command='''autoload -U compinit && compinit''' perl -0p -i.bak -e 's/### TASK BEGIN\n(.|\n)*### TASK END/### TASK BEGIN\n$ENV{command}\n### TASK END/' ~/.zshrc
+
+git clone https://github.com/sawadashota/go-task-completions.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/task || true
 
 
 ### PIP
