@@ -45,6 +45,7 @@ sed -i.bak 's/^plugins=.*/plugins=(zsh-autosuggestions zsh-syntax-highlighting k
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/johanhaleby/kubetail.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/kubetail
 
 ### PYENV
 curl https://pyenv.run | bash || true
@@ -68,6 +69,7 @@ sudo apt-get update; sudo apt-get install --no-install-recommends make build-ess
 
 # install specific Python version
 pyenv install --skip-existing 3.7.7
+pyenv global 3.7.7
 pyenv install --skip-existing anaconda3-2020.02
 
 ### TERRAFORM
