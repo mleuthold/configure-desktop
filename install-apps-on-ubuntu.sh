@@ -193,3 +193,12 @@ sudo tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
 # export PATH=$PATH:/usr/local/go/bin
 file=/etc/profile
 grep -q '^export PATH=$PATH:/usr/local/go/bin' $file && sed -i 's/^export PATH=$PATH:\/usr\/local\/go\/bin.*/export PATH=$PATH:\/usr\/local\/go\/bin/' $file || echo 'export PATH=$PATH:/usr/local/go/bin' >> $file
+
+### OPEN VPN 3
+sudo apt install apt-transport-https
+wget https://swupdate.openvpn.net/repos/openvpn-repo-pkg-key.pub
+sudo apt-key add openvpn-repo-pkg-key.pub
+DISTRO="focal" 
+sudo wget -O /etc/apt/sources.list.d/openvpn3.list https://swupdate.openvpn.net/community/openvpn3/repos/openvpn3-$DISTRO.list
+sudo apt update
+sudo apt install openvpn3
