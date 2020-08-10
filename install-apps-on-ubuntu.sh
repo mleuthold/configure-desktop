@@ -73,14 +73,14 @@ pyenv global 3.7.7
 pyenv install --skip-existing anaconda3-2020.02
 
 ### TERRAFORM
-git clone https://github.com/tfutils/tfenv.git ~/.tfenv || true
-sudo ln -s ~/.tfenv/bin/* /usr/local/bin || true
-tfenv install 0.12.20
+sudo git clone https://github.com/tfutils/tfenv.git /opt/tfenv || true
+sudo ln -s /opt/tfenv/bin/* /usr/local/bin || true
+sudo tfenv install 0.12.29
 
 ### TERRAGRUNT
-git clone https://github.com/cunymatthieu/tgenv.git ~/.tgenv || true
-sudo ln -s ~/.tgenv/bin/* /usr/local/bin || true
-tgenv install 0.21.11
+sudo git clone https://github.com/cunymatthieu/tgenv.git /opt/tgenv || true
+sudo ln -s /opt/tgenv/bin/* /usr/local/bin || true
+sudo tgenv install 0.23.33
 
 ### TASK
 grep -qxF "### TASK BEGIN
