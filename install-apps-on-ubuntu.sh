@@ -202,3 +202,9 @@ DISTRO="focal"
 sudo wget -O /etc/apt/sources.list.d/openvpn3.list https://swupdate.openvpn.net/community/openvpn3/repos/openvpn3-$DISTRO.list
 sudo apt update
 sudo apt install openvpn3
+
+### GCLOUD
+sudo echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo sudo apt-get install apt-transport-https ca-certificates gnupg
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+sudo apt-get update && sudo apt-get install google-cloud-sdk
