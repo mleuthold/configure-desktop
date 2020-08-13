@@ -102,6 +102,12 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip awscliv2.zip
 sudo ./aws/install
 
+pyenv virtualenv 3.7.7 aws-sso-pyenv
+pyenv shell 3.7.7/envs/aws-sso-pyenv
+pip install awsume
+pip install yawsso
+touch ~/.aws/credentials 
+
 ############################################
 
 # TERRAFORM - KAFKA PROVIDER
