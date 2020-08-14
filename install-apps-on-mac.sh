@@ -121,3 +121,9 @@ grep -qxF "### KUBECTL BEGIN
 ### KUBECTL END" ~/.zshrc || echo "\n### KUBECTL BEGIN\n### KUBECTL END" >> ~/.zshrc
 
 command='''[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)''' perl -0p -i.bak -e 's/### KUBECTL BEGIN\n(.|\n)*### KUBECTL END/### KUBECTL BEGIN\n$ENV{command}\n### KUBECTL END/' ~/.zshrc
+
+### FUN
+brew install fortune
+brew install cowsay
+brew install figlet
+brew install lolcat
