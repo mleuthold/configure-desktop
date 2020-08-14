@@ -34,6 +34,13 @@ sudo apt install virtualbox
 sudo apt install wine64
 sudo apt remove jq
 
+sudo apt-get install cowsay
+# /usr/share/cowsay/cows/
+sudo apt-get install fortune
+sudo apt-get install figlet
+ruby -v
+sudo gem install lolcat
+
 ### ZSH
 sudo apt install zsh
 chsh -s $(which zsh)
