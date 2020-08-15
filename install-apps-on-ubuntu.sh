@@ -90,8 +90,7 @@ sudo ln -s /opt/tgenv/bin/* /usr/local/bin || true
 sudo tgenv install 0.23.33
 
 ### TASK
-grep -qxF "### TASK BEGIN
-### TASK END" ~/.zshrc || echo "\n### TASK BEGIN\n### TASK END" >> ~/.zshrc
+grep -Pzo "(?s)### TASK BEGIN\n(.|\n)*### TASK END" || echo "\n### TASK BEGIN\n### TASK END" >> ~/.zshrc
 
 command='''autoload -U compinit && compinit''' perl -0p -i.bak -e 's/### TASK BEGIN\n(.|\n)*### TASK END/### TASK BEGIN\n$ENV{command}\n### TASK END/' ~/.zshrc
 
