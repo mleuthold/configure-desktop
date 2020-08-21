@@ -59,8 +59,7 @@ curl https://pyenv.run | bash || true
 pyenv update
 
 # add shims to your shell
-grep -qxF "### PYENV BEGIN
-### PYENV END" ~/.zshrc || echo "\n### PYENV BEGIN\n### PYENV END" >> ~/.zshrc
+grep -Pzo "(?s)### PYENV BEGIN\n(.|\n)*### PYENV END" || echo "\n### PYENV BEGIN\n### PYENV END" >> ~/.zshrc
 
 command='export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -97,8 +96,7 @@ command='''autoload -U compinit && compinit''' perl -0p -i.bak -e 's/### TASK BE
 git clone https://github.com/sawadashota/go-task-completions.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/task || true
 
 ### PIP
-grep -qxF "### PIP BEGIN
-### PIP END" ~/.zshrc || echo "\n### PIP BEGIN\n### PIP END" >> ~/.zshrc
+grep -Pzo "(?s)### PIP BEGIN\n(.|\n)*### PIP END" || echo "\n### PIP BEGIN\n### PIP END" >> ~/.zshrc
 
 command='eval "`pip completion --zsh`"
 compctl -K _pip_completion pip3' perl -0p -i.bak -e 's/### PIP BEGIN\n(.|\n)*### PIP END/### PIP BEGIN\n$ENV{command}\n### PIP END/' ~/.zshrc
