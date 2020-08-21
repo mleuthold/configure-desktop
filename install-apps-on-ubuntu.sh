@@ -46,7 +46,7 @@ sudo apt install zsh
 chsh -s $(which zsh)
 
 ### OH-MY-ZSH
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || true
 # add plugins for auto complete to ZSH
 sed -i.bak 's/^plugins=.*/plugins=(zsh-autosuggestions zsh-syntax-highlighting kubectl kubetail git sudo docker docker-compose task)/' $HOME/.zshrc
 
@@ -154,51 +154,6 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 # bash completion
 sudo curl -L https://raw.githubusercontent.com/docker/compose/1.24.1/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
-
-
-# BATS
-git clone https://github.com/bats-core/bats-core.git
-cd bats-core
-sudo ./install.sh /usr/local
-cd
-
-# NVM NodeJS
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-
-# into ~/.zshrc
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# GRADLE
-wget https://services.gradle.org/distributions/gradle-5.0-bin.zip
-sudo mkdir -p /opt/gradle
-sudo unzip -d /opt/gradle gradle-5.0-bin.zip
-export PATH=$PATH:/opt/gradle/gradle-5.0/bin
-gradle -v
-
-# CONFLUENT
-CONFLUENT_VERSION=5.4.0
-wget https://packages.confluent.io/archive/5.4/confluent-5.4.0-2.12.tar.gz
-sudo tar -xf confluent-5.4.0-2.12.tar.gz --directory /opt
-sudo chown -R root:root /opt/confluent-5.4.0
-sudo ln -s /opt/confluent-5.4.0 /opt/confluent
-sudo ln -s /opt/confluent/bin/* /usr/local/bin
-sudo rm /usr/local/bin/windows
-
-export CONFLUENT_HOME=/opt/confluent
-export PATH=$PATH:$CONFLUENT_HOME/bin
-
-# KAFKA
-KAFKA_VERSION=2.4.0
-wget http://apache.mirror.digionline.de/kafka/2.4.0/kafka_2.13-2.4.0.tgz
-sudo tar -xf kafka_2.13-2.4.0.tgz --directory /opt
-sudo chown -R root:root /opt/kafka_2.13-2.4.0
-sudo ln -s /opt/kafka_2.13-2.4.0 /opt/kafka
-sudo ln -s /opt/kafka/bin/*.sh /usr/local/bin
-
-export KAFKA_HOME=/opt/kafka
-export PATH=$PATH:$KAFKA_HOME/bin
 
 # GOLANG
 VERSION=1.13.7
