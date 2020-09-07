@@ -180,3 +180,14 @@ sudo echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages
 sudo sudo apt-get install apt-transport-https ca-certificates gnupg
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update && sudo apt-get install google-cloud-sdk
+
+### ADR
+wget https://github.com/npryce/adr-tools/archive/3.0.0.tar.gz
+tar -xf 3.0.0.tar.gz
+sudo rm -rf /opt/adr-tools-3.0.0
+sudo mv adr-tools-3.0.0 /opt
+sudo chown -R root:root /opt/adr-tools-3.0.0
+
+grep -Pzo "(?s)### ADR BEGIN\n(.|\n)*### ADR END" || echo "\n### ADR BEGIN\n### ADR END" >> ~/.zshrc
+
+command='export PATH="/opt/adr-tools-3.0.0/src:$PATH"' perl -0p -i.bak -e 's/### ADR BEGIN\n(.|\n)*### ADR END/### ADR BEGIN\n$ENV{command}\n### ADR END/' ~/.zshrc
