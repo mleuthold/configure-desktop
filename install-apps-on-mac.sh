@@ -3,6 +3,8 @@ xcode-select --install || true
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew update
 
+brew cask install amethyst
+
 # PYENV
 brew install pyenv || brew upgrade pyenv
 brew install pyenv-virtualenv || brew install pyenv-virtualenv
