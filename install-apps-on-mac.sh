@@ -6,6 +6,7 @@ brew update
 brew cask install amethyst
 
 brew install tmux
+# in iTerm2 configure: tmux attach || tmux new
 
 # PYENV
 brew install pyenv || brew upgrade pyenv
