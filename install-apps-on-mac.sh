@@ -8,6 +8,8 @@ brew cask install amethyst
 brew install tmux
 # in iTerm2 configure: tmux attach || tmux new
 
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # PYENV
 brew install pyenv || brew upgrade pyenv
 brew install pyenv-virtualenv || brew install pyenv-virtualenv
