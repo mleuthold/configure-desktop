@@ -27,8 +27,8 @@ fi' perl -0p -i.bak -e 's/### PYENV BEGIN\n(.|\n)*### PYENV END/### PYENV BEGIN\
 #brew install openssl readline sqlite3 xz zlib
 
 # install specific Python version
-pyenv install --skip-existing 3.7.7
-pyenv install --skip-existing anaconda3-2020.02
+pyenv install --skip-existing 3.7.9
+pyenv install --skip-existing anaconda3-2020.07
 
 # JAVA
 grep -qxF "### JAVA BEGIN
