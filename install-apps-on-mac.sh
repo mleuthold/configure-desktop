@@ -85,12 +85,12 @@ brew install vault | brew upgrade vault
 
 # TERRAFORM
 brew install tfenv
-tfenv install 0.12.28
+tfenv install 0.13.5
 
 # TERRAGRUNT
 brew tap alextodicescu/tgenv
 brew install tgenv
-tgenv install 0.23.30
+tgenv install 0.26.3
 
 # AWS AUTOCOMPLETER
 grep -qxF "### AWS BEGIN
