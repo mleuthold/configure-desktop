@@ -127,3 +127,5 @@ brew install fortune
 brew install cowsay
 brew install figlet
 brew install lolcat
+
+brew install helm
