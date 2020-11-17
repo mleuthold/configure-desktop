@@ -5,6 +5,8 @@ brew update
 
 brew cask install amethyst
 
+brew install tmux
+
 # PYENV
 brew install pyenv || brew upgrade pyenv
 brew install pyenv-virtualenv || brew install pyenv-virtualenv
