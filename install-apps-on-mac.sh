@@ -141,3 +141,5 @@ brew install helm
 
 brew tap johanhaleby/kubetail
 brew install kubetail
+
+brew install zsh-syntax-highlighting
