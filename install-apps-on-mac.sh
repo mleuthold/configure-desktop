@@ -78,7 +78,7 @@ source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 gcloud components install kubectl
 
 gcloud config set survey/disable_prompts True
-gcloud config set component_manager/disable_update_check true
+gcloud config set component_manager/disable_update_check True
 
 brew install telnet
 
@@ -138,3 +138,6 @@ brew install figlet
 brew install lolcat
 
 brew install helm
+
+brew tap johanhaleby/kubetail
+brew install kubetail
