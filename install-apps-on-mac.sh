@@ -44,13 +44,14 @@ jdk 1.8''' perl -0p -i.bak -e 's/### JAVA BEGIN\n(.|\n)*### JAVA END/### JAVA BE
 
 brew tap AdoptOpenJDK/openjdk
 # install specific JAVA version
-brew cask install adoptopenjdk8
+#brew cask install adoptopenjdk8
 brew cask install adoptopenjdk11
 
 brew install go-task/tap/go-task
 
-curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
-sudo installer -pkg AWSCLIV2.pkg -target /
+#curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+#sudo installer -pkg AWSCLIV2.pkg -target /
+brew install awscli
 
 # ZSH
 brew install zsh-autosuggestions
