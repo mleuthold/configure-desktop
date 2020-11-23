@@ -144,7 +144,13 @@ brew install kubetail
 
 brew install zsh-syntax-highlighting
 
+# BIN dir in HOME folder
 mkdir -p ~/bin
+grep -qxF "### BIN BEGIN
+### BIN END" ~/.zshrc || echo "\n### BIN BEGIN\n### BIN END" >> ~/.zshrc
+
+command='''export PATH=$PATH:~/bin''' perl -0p -i.bak -e 's/### BIN BEGIN\n(.|\n)*### BIN END/### BIN BEGIN\n$ENV{command}\n### BIN END/' ~/.zshrc
+
 
 ### SUBLIME 3
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
