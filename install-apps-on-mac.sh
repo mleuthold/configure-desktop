@@ -144,13 +144,21 @@ brew install kubetail
 
 brew install zsh-syntax-highlighting
 
+# ALIAS
+grep -qxF "### ALIAS BEGIN
+### ALIAS END" ~/.zshrc || echo "\n### ALIAS BEGIN\n### ALIAS END" >> ~/.zshrc
+
+command='''
+alias yawsso="/Users/hellofresh/.pyenv/versions/anaconda3-2020.07/bin/yawsso"
+alias awsume=". /Users/hellofresh/.pyenv/versions/anaconda3-2020.07/bin/awsume"
+''' perl -0p -i.bak -e 's/### ALIAS BEGIN\n(.|\n)*### ALIAS END/### ALIAS BEGIN\n$ENV{command}\n### ALIAS END/' ~/.zshrc
+
 # BIN dir in HOME folder
 mkdir -p ~/bin
 grep -qxF "### BIN BEGIN
 ### BIN END" ~/.zshrc || echo "\n### BIN BEGIN\n### BIN END" >> ~/.zshrc
 
 command='''export PATH=$PATH:~/bin''' perl -0p -i.bak -e 's/### BIN BEGIN\n(.|\n)*### BIN END/### BIN BEGIN\n$ENV{command}\n### BIN END/' ~/.zshrc
-
 
 ### SUBLIME 3
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
