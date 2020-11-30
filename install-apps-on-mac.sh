@@ -12,7 +12,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 # PYENV
 brew install pyenv || brew upgrade pyenv
-brew install pyenv-virtualenv || brew install pyenv-virtualenv
+brew install pyenv-virtualenv || brew upgrade pyenv-virtualenv
 
 # add shims to your shell
 grep -qxF "### PYENV BEGIN
@@ -161,8 +161,7 @@ grep -qxF "### BIN BEGIN
 command='''export PATH=$PATH:~/bin''' perl -0p -i.bak -e 's/### BIN BEGIN\n(.|\n)*### BIN END/### BIN BEGIN\n$ENV{command}\n### BIN END/' ~/.zshrc
 
 ### SUBLIME 3
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl || true
 
 brew tap hashicorp/tap
 brew install hashicorp/tap/vault || brew upgrade hashicorp/tap/vault
-
