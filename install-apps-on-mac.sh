@@ -162,3 +162,7 @@ command='''export PATH=$PATH:~/bin''' perl -0p -i.bak -e 's/### BIN BEGIN\n(.|\n
 
 ### SUBLIME 3
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+
+brew tap hashicorp/tap
+brew install hashicorp/tap/vault || brew upgrade hashicorp/tap/vault
+
