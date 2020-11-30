@@ -149,8 +149,8 @@ grep -qxF "### ALIAS BEGIN
 ### ALIAS END" ~/.zshrc || echo "\n### ALIAS BEGIN\n### ALIAS END" >> ~/.zshrc
 
 command='''
-alias yawsso="/Users/hellofresh/.pyenv/versions/anaconda3-2020.07/bin/yawsso"
-alias awsume=". /Users/hellofresh/.pyenv/versions/anaconda3-2020.07/bin/awsume"
+alias yawsso="$HOME/.pyenv/versions/anaconda3-2020.07/bin/yawsso"
+alias awsume=". $HOME/.pyenv/versions/anaconda3-2020.07/bin/awsume"
 ''' perl -0p -i.bak -e 's/### ALIAS BEGIN\n(.|\n)*### ALIAS END/### ALIAS BEGIN\n$ENV{command}\n### ALIAS END/' ~/.zshrc
 
 # BIN dir in HOME folder
