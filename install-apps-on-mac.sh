@@ -70,7 +70,7 @@ pyenv virtualenv 3.7.7 gcp || true
 grep -qxF "### GCLOUD BEGIN
 ### GCLOUD END" ~/.zshrc || echo "\n### GCLOUD BEGIN\n### GCLOUD END" >> ~/.zshrc
 
-command='''export CLOUDSDK_PYTHON="/usr/local/opt/python@3.8/libexec/bin/python"
+command='''export CLOUDSDK_PYTHON="$HOME/.pyenv/versions/3.7.9/bin/python"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"''' perl -0p -i.bak -e 's/### GCLOUD BEGIN\n(.|\n)*### GCLOUD END/### GCLOUD BEGIN\n$ENV{command}\n### GCLOUD END/' ~/.zshrc
 
