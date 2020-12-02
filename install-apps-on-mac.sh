@@ -62,7 +62,7 @@ command='''source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh''
 
 brew install gpg | brew upgrade gnupg
 
-brew cask install google-cloud-sdk
+brew install --cask google-cloud-sdk
 # export CLOUDSDK_PYTHON=/Users/martin.leuthold/.pyenv/versions/3.8.2/bin/python
 
 pyenv virtualenv 3.7.7 gcp || true
