@@ -151,6 +151,7 @@ grep -qxF "### ALIAS BEGIN
 command='''
 alias yawsso="$HOME/.pyenv/versions/anaconda3-2020.07/bin/yawsso"
 alias awsume=". $HOME/.pyenv/versions/anaconda3-2020.07/bin/awsume"
+alias awsumepy="$HOME/.pyenv/versions/anaconda3-2020.07/bin/awsumepy"
 ''' perl -0p -i.bak -e 's/### ALIAS BEGIN\n(.|\n)*### ALIAS END/### ALIAS BEGIN\n$ENV{command}\n### ALIAS END/' ~/.zshrc
 
 # BIN dir in HOME folder
