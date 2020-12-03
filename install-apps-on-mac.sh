@@ -82,8 +82,6 @@ gcloud config set component_manager/disable_update_check True
 
 brew install telnet
 
-brew install vault | brew upgrade vault
-
 # TERRAFORM
 brew install tfenv
 tfenv install 0.13.5
@@ -164,5 +162,15 @@ command='''export PATH=$PATH:~/bin''' perl -0p -i.bak -e 's/### BIN BEGIN\n(.|\n
 ### SUBLIME 3
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl || true
 
+### VAULT
 brew tap hashicorp/tap
 brew install hashicorp/tap/vault || brew upgrade hashicorp/tap/vault
+
+grep -qxF "### VAULT BEGIN
+### VAULT END" ~/.zshrc || echo "\n### VAULT BEGIN\n### VAULT END" >> ~/.zshrc
+
+command='''
+vault_sso(){
+	export VAULT_TOKEN="$(vault login -method=oidc -token-only -no-store)"
+}
+''' perl -0p -i.bak -e 's/### VAULT BEGIN\n(.|\n)*### VAULT END/### VAULT BEGIN\n$ENV{command}\n### VAULT END/' ~/.zshrc
