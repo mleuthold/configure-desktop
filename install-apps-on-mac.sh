@@ -174,3 +174,5 @@ vault_sso(){
 	export VAULT_TOKEN="$(vault login -method=oidc -token-only -no-store)"
 }
 ''' perl -0p -i.bak -e 's/### VAULT BEGIN\n(.|\n)*### VAULT END/### VAULT BEGIN\n$ENV{command}\n### VAULT END/' ~/.zshrc
+
+brew install mysql
