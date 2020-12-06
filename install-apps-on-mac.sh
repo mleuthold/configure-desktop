@@ -176,3 +176,12 @@ vault_sso(){
 ''' perl -0p -i.bak -e 's/### VAULT BEGIN\n(.|\n)*### VAULT END/### VAULT BEGIN\n$ENV{command}\n### VAULT END/' ~/.zshrc
 
 brew install mysql
+
+### auto-completion for brew in ZSH
+# https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
