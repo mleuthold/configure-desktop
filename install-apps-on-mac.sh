@@ -30,6 +30,8 @@ fi' perl -0p -i.bak -e 's/### PYENV BEGIN\n(.|\n)*### PYENV END/### PYENV BEGIN\
 pyenv install --skip-existing 3.7.9
 pyenv install --skip-existing anaconda3-2020.07
 
+pyenv global anaconda3-2020.07
+
 # JAVA
 grep -qxF "### JAVA BEGIN
 ### JAVA END" ~/.zshrc || echo "\n### JAVA BEGIN\n### JAVA END" >> ~/.zshrc
