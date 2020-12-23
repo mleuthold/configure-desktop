@@ -3,7 +3,7 @@ xcode-select --install || true
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew update
 
-brew cask install amethyst
+brew install --cask amethyst
 
 brew install tmux
 # in iTerm2 configure: tmux attach || tmux new
