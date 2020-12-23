@@ -182,6 +182,15 @@ brew install mysql
 ### PARQUET-TOOLS
 brew install parquet-tools
 
+grep -qxF "### PARQUETTOOLS BEGIN
+### PARQUETTOOLS END" ~/.zshrc || echo "\n### PARQUETTOOLS BEGIN\n### PARQUETTOOLS END" >> ~/.zshrc
+
+command='''
+parquet_tools(){
+	docker run --rm --workdir /data -it -v $(pwd):/data nathanhowell/parquet-tools "$@"
+}
+''' perl -0p -i.bak -e 's/### PARQUETTOOLS BEGIN\n(.|\n)*### PARQUETTOOLS END/### PARQUETTOOLS BEGIN\n$ENV{command}\n### PARQUETTOOLS END/' ~/.zshrc
+
 ### auto-completion for brew in ZSH
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
 if type brew &>/dev/null; then
