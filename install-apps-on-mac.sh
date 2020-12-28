@@ -42,7 +42,7 @@ command='''jdk() {
         # java -version
  }
 
-jdk 1.8''' perl -0p -i.bak -e 's/### JAVA BEGIN\n(.|\n)*### JAVA END/### JAVA BEGIN\n$ENV{command}\n### JAVA END/' ~/.zshrc
+jdk 11''' perl -0p -i.bak -e 's/### JAVA BEGIN\n(.|\n)*### JAVA END/### JAVA BEGIN\n$ENV{command}\n### JAVA END/' ~/.zshrc
 
 brew tap AdoptOpenJDK/openjdk
 # install specific JAVA version
