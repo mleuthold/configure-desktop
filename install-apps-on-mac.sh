@@ -67,7 +67,7 @@ brew install gpg | brew upgrade gnupg
 brew install --cask google-cloud-sdk
 # export CLOUDSDK_PYTHON=/Users/martin.leuthold/.pyenv/versions/3.8.2/bin/python
 
-pyenv virtualenv 3.7.7 gcp || true
+pyenv virtualenv 3.7.9 gcp || true
 
 grep -qxF "### GCLOUD BEGIN
 ### GCLOUD END" ~/.zshrc || echo "\n### GCLOUD BEGIN\n### GCLOUD END" >> ~/.zshrc
