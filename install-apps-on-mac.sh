@@ -47,7 +47,7 @@ jdk 1.8''' perl -0p -i.bak -e 's/### JAVA BEGIN\n(.|\n)*### JAVA END/### JAVA BE
 brew tap AdoptOpenJDK/openjdk
 # install specific JAVA version
 #brew cask install adoptopenjdk8
-brew cask install adoptopenjdk11
+brew install --cask adoptopenjdk11
 
 brew install go-task/tap/go-task
 
