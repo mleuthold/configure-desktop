@@ -93,6 +93,7 @@ brew install telnet
 # TERRAFORM
 brew install tfenv
 tfenv install 0.13.5
+tfenv use 0.13.5
 
 # TERRAGRUNT
 brew tap alextodicescu/tgenv
