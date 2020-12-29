@@ -204,9 +204,19 @@ parquet_tools(){
 
 ### auto-completion for brew in ZSH
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
+
+grep -qxF "### BREW BEGIN
+### BREW END" ~/.zshrc || cat <<< "### BREW BEGIN
+### BREW END
+$(cat ~/.zshrc)" > test.txt
+
+#echo "\n### BREW BEGIN\n### BREW END" >> ~/.zshrc
+
+command='''
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
   autoload -Uz compinit
   compinit
 fi
+''' perl -0p -i.bak -e 's/### BREW BEGIN\n(.|\n)*### BREW END/### BREW BEGIN\n$ENV{command}\n### BREW END/' ~/.zshrc
