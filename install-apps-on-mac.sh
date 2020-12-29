@@ -83,7 +83,7 @@ source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 ''' perl -0p -i.bak -e 's/### GCLOUD BEGIN\n(.|\n)*### GCLOUD END/### GCLOUD BEGIN\n$ENV{command}\n### GCLOUD END/' ~/.zshrc
 
 
-gcloud components install kubectl
+#gcloud components install kubectl
 
 gcloud config set survey/disable_prompts True
 gcloud config set component_manager/disable_update_check True
