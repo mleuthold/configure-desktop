@@ -208,7 +208,7 @@ parquet_tools(){
 grep -qxF "### BREW BEGIN
 ### BREW END" ~/.zshrc || cat <<< "### BREW BEGIN
 ### BREW END
-$(cat ~/.zshrc)" > test.txt
+$(cat ~/.zshrc)" > ~/.zshrc
 
 #echo "\n### BREW BEGIN\n### BREW END" >> ~/.zshrc
 
