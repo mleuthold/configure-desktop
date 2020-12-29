@@ -213,6 +213,9 @@ $(cat ~/.zshrc)" > ~/.zshrc
 #echo "\n### BREW BEGIN\n### BREW END" >> ~/.zshrc
 
 command='''
+# instead of fixing permissions, ignore them
+ZSH_DISABLE_COMPFIX="true"
+
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
