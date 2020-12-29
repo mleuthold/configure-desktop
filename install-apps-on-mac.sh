@@ -18,10 +18,12 @@ brew install pyenv-virtualenv || brew upgrade pyenv-virtualenv
 grep -qxF "### PYENV BEGIN
 ### PYENV END" ~/.zshrc || echo "\n### PYENV BEGIN\n### PYENV END" >> ~/.zshrc
 
-command='if command -v pyenv 1>/dev/null 2>&1; then
+command='''
+if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
-fi' perl -0p -i.bak -e 's/### PYENV BEGIN\n(.|\n)*### PYENV END/### PYENV BEGIN\n$ENV{command}\n### PYENV END/' ~/.zshrc
+fi
+''' perl -0p -i.bak -e 's/### PYENV BEGIN\n(.|\n)*### PYENV END/### PYENV BEGIN\n$ENV{command}\n### PYENV END/' ~/.zshrc
 
 # optional, but recommended:
 #brew install openssl readline sqlite3 xz zlib
@@ -36,13 +38,15 @@ pyenv global anaconda3-2020.07
 grep -qxF "### JAVA BEGIN
 ### JAVA END" ~/.zshrc || echo "\n### JAVA BEGIN\n### JAVA END" >> ~/.zshrc
 
-command='''jdk() {
+command='''
+jdk() {
         version=$1
         export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
         # java -version
  }
 
-jdk 11''' perl -0p -i.bak -e 's/### JAVA BEGIN\n(.|\n)*### JAVA END/### JAVA BEGIN\n$ENV{command}\n### JAVA END/' ~/.zshrc
+jdk 11
+''' perl -0p -i.bak -e 's/### JAVA BEGIN\n(.|\n)*### JAVA END/### JAVA BEGIN\n$ENV{command}\n### JAVA END/' ~/.zshrc
 
 brew tap AdoptOpenJDK/openjdk
 # install specific JAVA version
@@ -72,9 +76,11 @@ pyenv virtualenv 3.7.9 gcp || true
 grep -qxF "### GCLOUD BEGIN
 ### GCLOUD END" ~/.zshrc || echo "\n### GCLOUD BEGIN\n### GCLOUD END" >> ~/.zshrc
 
-command='''export CLOUDSDK_PYTHON="$HOME/.pyenv/versions/3.7.9/bin/python"
+command='''
+export CLOUDSDK_PYTHON="$HOME/.pyenv/versions/3.7.9/bin/python"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"''' perl -0p -i.bak -e 's/### GCLOUD BEGIN\n(.|\n)*### GCLOUD END/### GCLOUD BEGIN\n$ENV{command}\n### GCLOUD END/' ~/.zshrc
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+''' perl -0p -i.bak -e 's/### GCLOUD BEGIN\n(.|\n)*### GCLOUD END/### GCLOUD BEGIN\n$ENV{command}\n### GCLOUD END/' ~/.zshrc
 
 
 gcloud components install kubectl
@@ -97,16 +103,20 @@ tgenv install 0.26.3
 grep -qxF "### AWS BEGIN
 ### AWS END" ~/.zshrc || echo "\n### AWS BEGIN\n### AWS END" >> ~/.zshrc
 
-command='''autoload bashcompinit && bashcompinit
-complete -C '/usr/local/bin/aws_completer' aws''' perl -0p -i.bak -e 's/### AWS BEGIN\n(.|\n)*### AWS END/### AWS BEGIN\n$ENV{command}\n### AWS END/' ~/.zshrc
+command='''
+autoload bashcompinit && bashcompinit
+complete -C '/usr/local/bin/aws_completer' aws
+''' perl -0p -i.bak -e 's/### AWS BEGIN\n(.|\n)*### AWS END/### AWS BEGIN\n$ENV{command}\n### AWS END/' ~/.zshrc
 
 
 # fix locale on MacOS for Python
 grep -qxF "### PYTHON BEGIN
 ### PYTHON END" ~/.zshrc || echo "\n### PYTHON BEGIN\n### PYTHON END" >> ~/.zshrc
 
-command='''export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8''' perl -0p -i.bak -e 's/### PYTHON BEGIN\n(.|\n)*### PYTHON END/### PYTHON BEGIN\n$ENV{command}\n### PYTHON END/' ~/.zshrc
+command='''
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+''' perl -0p -i.bak -e 's/### PYTHON BEGIN\n(.|\n)*### PYTHON END/### PYTHON BEGIN\n$ENV{command}\n### PYTHON END/' ~/.zshrc
 
 
 # TASK
