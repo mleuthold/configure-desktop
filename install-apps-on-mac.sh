@@ -88,6 +88,9 @@ source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 gcloud config set survey/disable_prompts True
 gcloud config set component_manager/disable_update_check True
 
+# gcloud auth login
+# gcloud auth configure-docker
+
 brew install telnet
 
 # TERRAFORM
