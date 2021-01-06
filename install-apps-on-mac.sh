@@ -112,6 +112,7 @@ grep -qxF "### AWS BEGIN
 command='''
 autoload bashcompinit && bashcompinit
 complete -C '/usr/local/bin/aws_completer' aws
+export AWS_PAGER=""
 ''' perl -0p -i.bak -e 's/### AWS BEGIN\n(.|\n)*### AWS END/### AWS BEGIN\n$ENV{command}\n### AWS END/' ~/.zshrc
 
 
