@@ -55,9 +55,11 @@ brew install --cask adoptopenjdk11
 
 brew install go-task/tap/go-task
 
-#curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
-#sudo installer -pkg AWSCLIV2.pkg -target /
-brew install awscli
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg AWSCLIV2.pkg -target /
+
+# command doesn't work on multi-user machine
+#brew install awscli
 
 # ZSH
 brew install zsh-autosuggestions
