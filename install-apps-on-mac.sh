@@ -45,12 +45,12 @@ jdk() {
         # java -version
  }
 
-jdk 11
+jdk 1.8
 ''' perl -0p -i.bak -e 's/### JAVA BEGIN\n(.|\n)*### JAVA END/### JAVA BEGIN\n$ENV{command}\n### JAVA END/' ~/.zshrc
 
 brew tap AdoptOpenJDK/openjdk
 # install specific JAVA version
-#brew cask install adoptopenjdk8
+brew install --cask adoptopenjdk8
 brew install --cask adoptopenjdk11
 
 brew install go-task/tap/go-task
