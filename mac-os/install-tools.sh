@@ -17,7 +17,7 @@ brew tap AdoptOpenJDK/openjdk \
   && brew install --cask adoptopenjdk11
 brew install go-task/tap/go-task
 brew install zsh-autosuggestions
-brew install gpg | brew upgrade gnupg
+brew install gpg || brew upgrade gnupg
 brew install --cask google-cloud-sdk \
   && gcloud config set survey/disable_prompts True \
   && gcloud config set component_manager/disable_update_check True
