@@ -6,10 +6,11 @@ brew update
 # install tools
 brew install --cask amethyst
 brew install tmux # in iTerm2 configure: tmux attach || tmux new
-brew install pyenv || brew upgrade pyenv \
+(brew install pyenv || brew upgrade pyenv) \
   && pyenv install --skip-existing 3.7.9 \
-  && pyenv install --skip-existing anaconda3-2020.07 \
-  && pyenv global anaconda3-2020.07
+  && pyenv install --skip-existing anaconda3-2020.11 \
+  && conda create --yes --name ana202011_py37 python=3.7 anaconda==2020.11 \
+  && pyenv global anaconda3-2020.07/envs/ana202011_py37
 brew install pyenv-virtualenv || brew upgrade pyenv-virtualenv
 brew tap AdoptOpenJDK/openjdk \
   && brew install --cask adoptopenjdk8 \
@@ -45,6 +46,7 @@ brew tap alextodicescu/tgenv \
   && brew install tgenv \
   && MY_TERRAGRUNT_VERSION="0.26.3" \
   && tgenv install "$MY_TERRAGRUNT_VERSION"
+brew install apache-spark # contains Hadoop libraries v3.2
 
 # install tools without brew
 
