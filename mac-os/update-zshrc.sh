@@ -88,4 +88,11 @@ vault_sso(){
 parquet_tools(){
 	docker run --rm --workdir /data -it -v $(pwd):/data nathanhowell/parquet-tools "$@"
 }
+
+# For a ipython notebook and pyspark integration
+if which pyspark > /dev/null; then
+  export SPARK_HOME="$(brew --prefix apache-spark)/libexec"
+  export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/build:$PYTHONPATH
+  #export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$PYTHONPATH
+fi
 ''' perl -0p -i.bak -e 's/### ZSHRC BOTTOM BEGIN\n(.|\n)*### ZSHRC BOTTOM END/### ZSHRC BOTTOM BEGIN\n$ENV{command}\n### ZSHRC BOTTOM END/' ~/.zshrc
