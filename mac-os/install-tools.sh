@@ -9,7 +9,8 @@ brew install tmux # in iTerm2 configure: tmux attach || tmux new
 (brew install pyenv || brew upgrade pyenv) \
   && pyenv install --skip-existing 3.7.9 \
   && pyenv install --skip-existing anaconda3-2020.11 \
-  && conda create --yes --name ana202011_py37 python=3.7 anaconda==2020.11 \
+  && pyenv shell anaconda3-2020.11 \
+  && conda create --yes --name ana202011_py37 python=3.7 anaconda \
   && pyenv global anaconda3-2020.11/envs/ana202011_py37
 brew install pyenv-virtualenv || brew upgrade pyenv-virtualenv
 brew tap AdoptOpenJDK/openjdk \
