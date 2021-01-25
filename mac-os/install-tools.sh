@@ -63,8 +63,8 @@ git clone https://github.com/sawadashota/go-task-completions.git ${ZSH_CUSTOM:=~
 # Enable it in your .zshrc by adding it to your plugin list and reloading the completion:
 #plugins=(… task)
 
-# SUBLIME 3
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl || true
-
 # general purpose bin folder
 mkdir -p ~/bin
+
+# SUBLIME 3
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl || true
