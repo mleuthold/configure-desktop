@@ -73,9 +73,9 @@ autoload -U compinit -i && compinit -i
 
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
-alias yawsso="$HOME/.pyenv/versions/anaconda3-2020.07/bin/yawsso"
-alias awsume=". $HOME/.pyenv/versions/anaconda3-2020.07/bin/awsume"
-alias awsumepy="$HOME/.pyenv/versions/anaconda3-2020.07/bin/awsumepy"
+alias yawsso="$HOME/.pyenv/versions/anaconda3-2020.11/bin/yawsso"
+alias awsume=". $HOME/.pyenv/versions/anaconda3-2020.11/bin/awsume"
+alias awsumepy="$HOME/.pyenv/versions/anaconda3-2020.11/bin/awsumepy"
 
 
 export PATH=$PATH:~/bin
