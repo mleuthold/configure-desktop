@@ -48,6 +48,7 @@ brew tap alextodicescu/tgenv \
   && MY_TERRAGRUNT_VERSION="0.26.3" \
   && tgenv install "$MY_TERRAGRUNT_VERSION"
 brew install apache-spark # contains Hadoop libraries v3.2
+brew install wget
 
 # install tools without brew
 
