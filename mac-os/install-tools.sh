@@ -50,6 +50,8 @@ brew tap alextodicescu/tgenv \
 brew install apache-spark # contains Hadoop libraries v3.2
 brew install wget
 brew install maven
+brew install jq
+brew install pipx
 
 # install tools without brew
 
