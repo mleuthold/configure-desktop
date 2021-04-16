@@ -53,7 +53,8 @@ brew install maven
 brew install jq
 brew install pipx \
   && pipx ensurepath \
-pipx install awsume
+pipx install awsume \
+  && awsume-configure --shell zsh --autocomplete-file ~/.zshrc --alias-file ~/.zshrc
 pipx install yawsso
 
 # install tools without brew
