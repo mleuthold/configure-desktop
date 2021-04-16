@@ -51,12 +51,19 @@ brew install apache-spark # contains Hadoop libraries v3.2
 brew install wget
 brew install maven
 brew install jq
+
 brew install pipx \
-  && pipx ensurepath \
+  && pipx ensurepath
+
 pipx install awsume \
   && awsume-configure --shell zsh --autocomplete-file ~/.zshrc --alias-file ~/.zshrc
+  
 pipx install yawsso
+
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+# Oh-My-Zsh
+mkdir -p $ZSH_CUSTOM/plugins/poetry
+poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
 
 # install tools without brew
 
