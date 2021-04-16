@@ -3,7 +3,7 @@
 ##########################
 
 # ZSH PLUGINS
-sed -i .bak 's/plugins=(.*)/\plugins=(git docker docker-compose task kubectl sudo)/' ~/.zshrc
+sed -i .bak 's/plugins=(.*)/\plugins=(git docker docker-compose task kubectl sudo poetry)/' ~/.zshrc
 sed -i .bak 's/ZSH_THEME=".*"/\ZSH_THEME="ys"/' ~/.zshrc
 sed -i .bak 's/DISABLE_UPDATE_PROMPT=".*"/\DISABLE_UPDATE_PROMPT="true"/' ~/.zshrc
 
