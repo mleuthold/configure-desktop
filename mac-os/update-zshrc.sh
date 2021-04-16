@@ -68,6 +68,9 @@ export AWS_PAGER=""
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# PIPX
+eval "$(register-python-argcomplete pipx)"
+
 # TASKFILE
 autoload -U compinit -i && compinit -i
 
