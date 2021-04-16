@@ -56,6 +56,7 @@ brew install pipx \
 pipx install awsume \
   && awsume-configure --shell zsh --autocomplete-file ~/.zshrc --alias-file ~/.zshrc
 pipx install yawsso
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 
 # install tools without brew
 
