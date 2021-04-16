@@ -51,7 +51,10 @@ brew install apache-spark # contains Hadoop libraries v3.2
 brew install wget
 brew install maven
 brew install jq
-brew install pipx
+brew install pipx \
+  && pipx ensurepath \
+pipx install awsume
+pipx install yawsso
 
 # install tools without brew
 
