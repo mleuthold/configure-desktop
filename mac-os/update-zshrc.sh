@@ -54,7 +54,7 @@ jdk 11
 
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export CLOUDSDK_PYTHON="$HOME/.pyenv/versions/3.7.9/bin/python"
+export CLOUDSDK_PYTHON="$HOME/.pyenv/versions/3.8.9/bin/python"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
