@@ -22,10 +22,6 @@ brew install gpg || brew upgrade gnupg
 brew install --cask google-cloud-sdk \
   && gcloud config set survey/disable_prompts True \
   && gcloud config set component_manager/disable_update_check True
-# export CLOUDSDK_PYTHON=/Users/martin.leuthold/.pyenv/versions/3.8.2/bin/python
-# gcloud components install kubectl
-# gcloud auth login
-# gcloud auth configure-docker
 brew install telnet
 brew install --cask fly # CONCOURSE
 brew install fortune
