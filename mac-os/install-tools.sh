@@ -47,6 +47,7 @@ brew tap alextodicescu/tgenv \
 brew install wget
 brew install maven
 brew install jq
+brew install minica # create your own self signed SSL certificate
 
 brew install pipx \
   && pipx ensurepath
