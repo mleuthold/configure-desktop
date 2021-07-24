@@ -59,7 +59,7 @@ pipx install awsume &&
 
 pipx install yawsso
 
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
 # Oh-My-Zsh
 mkdir -p $ZSH_CUSTOM/plugins/poetry
 poetry completions zsh >$ZSH_CUSTOM/plugins/poetry/_poetry

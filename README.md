@@ -1,13 +1,20 @@
-# configure-desktop
-Do all the things to get my desktop back to full speed.
+# Configure desktop
 
-For setting up my Mac do:
+In order to set up a new laptop/machine/environment for development there are scripts to install and configure the environment.
+
+The scripts can also be used by other engineers to set up their environment.
+
+## setup your MacBook
+
+Simply run:
 ```shell
-bash ./mac-os/install-tools.sh
-bash ./mac-os/update-zshrc.sh
+./mac-os/install-tools.sh
+./mac-os/update-zshrc.sh
 ```
 
-For setting up my Ubuntu do:
+## setup your Ubuntu
+
+Simply run
 ```shell
-bash ./ubuntu/install-apps.sh
+./ubuntu/install-apps.sh
 ```
