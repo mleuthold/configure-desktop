@@ -59,7 +59,7 @@ curl https://pyenv.run | bash || true
 pyenv update
 
 # add shims to your shell
-grep -Pzo "(?s)### PYENV BEGIN\n(.|\n)*### PYENV END" || echo "\n### PYENV BEGIN\n### PYENV END" >> ~/.zshrc
+grep -Pzo "(?s)### PYENV BEGIN\n(.|\n)*### PYENV END" || echo "\n### PYENV BEGIN\n### PYENV END" >>~/.zshrc
 
 command='export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -71,7 +71,8 @@ fi' perl -0p -i.bak -e 's/### PYENV BEGIN\n(.|\n)*### PYENV END/### PYENV BEGIN\
 
 # optional, but recommended:
 # add Python build dependencies for Ubuntu
-sudo apt-get update; sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+sudo apt-get update
+sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 # install specific Python version
 pyenv install --skip-existing 3.7.7
@@ -89,14 +90,14 @@ sudo ln -s /opt/tgenv/bin/* /usr/local/bin || true
 sudo tgenv install 0.23.33
 
 ### TASK
-grep -Pzo "(?s)### TASK BEGIN\n(.|\n)*### TASK END" || echo "\n### TASK BEGIN\n### TASK END" >> ~/.zshrc
+grep -Pzo "(?s)### TASK BEGIN\n(.|\n)*### TASK END" || echo "\n### TASK BEGIN\n### TASK END" >>~/.zshrc
 
 command='''autoload -U compinit && compinit''' perl -0p -i.bak -e 's/### TASK BEGIN\n(.|\n)*### TASK END/### TASK BEGIN\n$ENV{command}\n### TASK END/' ~/.zshrc
 
 git clone https://github.com/sawadashota/go-task-completions.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/task || true
 
 ### PIP
-grep -Pzo "(?s)### PIP BEGIN\n(.|\n)*### PIP END" || echo "\n### PIP BEGIN\n### PIP END" >> ~/.zshrc
+grep -Pzo "(?s)### PIP BEGIN\n(.|\n)*### PIP END" || echo "\n### PIP BEGIN\n### PIP END" >>~/.zshrc
 
 command='eval "`pip completion --zsh`"
 compctl -K _pip_completion pip3' perl -0p -i.bak -e 's/### PIP BEGIN\n(.|\n)*### PIP END/### PIP BEGIN\n$ENV{command}\n### PIP END/' ~/.zshrc
@@ -110,25 +111,25 @@ pyenv virtualenv 3.7.7 aws-sso-pyenv
 pyenv shell 3.7.7/envs/aws-sso-pyenv
 pip install awsume
 pip install yawsso
-touch ~/.aws/credentials 
+touch ~/.aws/credentials
 
 ############################################
 
 # TERRAFORM - KAFKA PROVIDER
 TERRAFORM_KAFKA_PROVIDER_VERSION=0.2.3
-wget https://github.com/Mongey/terraform-provider-kafka/releases/download/v"$TERRAFORM_KAFKA_PROVIDER_VERSION"/terraform-provider-kafka_"$TERRAFORM_KAFKA_PROVIDER_VERSION"_linux_amd64.tar.gz \
-   && tar -xf terraform-provider-kafka_"$TERRAFORM_KAFKA_PROVIDER_VERSION"_linux_amd64.tar.gz \
-   && mkdir --parents ~/.terraform.d/plugins \
-   && mv terraform-provider-kafka_v"$TERRAFORM_KAFKA_PROVIDER_VERSION" ~/.terraform.d/plugins/
+wget https://github.com/Mongey/terraform-provider-kafka/releases/download/v"$TERRAFORM_KAFKA_PROVIDER_VERSION"/terraform-provider-kafka_"$TERRAFORM_KAFKA_PROVIDER_VERSION"_linux_amd64.tar.gz &&
+	tar -xf terraform-provider-kafka_"$TERRAFORM_KAFKA_PROVIDER_VERSION"_linux_amd64.tar.gz &&
+	mkdir --parents ~/.terraform.d/plugins &&
+	mv terraform-provider-kafka_v"$TERRAFORM_KAFKA_PROVIDER_VERSION" ~/.terraform.d/plugins/
 
 # HELM
-curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 >get_helm.sh
 chmod 700 get_helm.sh
 ./get_helm.sh
 
 # MINIKUBE
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
-   && sudo install minikube-linux-amd64 /usr/local/bin/minikube
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 &&
+	sudo install minikube-linux-amd64 /usr/local/bin/minikube
 minikube config set cpus 4
 minikube config set memory 10240
 
@@ -143,10 +144,10 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 docker run hello-world
 
-wget https://github.com/docker/docker-credential-helpers/releases/download/v0.6.3/docker-credential-pass-v0.6.3-amd64.tar.gz \
-   && tar -xf docker-credential-pass-v0.6.3-amd64.tar.gz \
-   && chmod +x docker-credential-pass \
-   && sudo mv docker-credential-pass /usr/local/bin/
+wget https://github.com/docker/docker-credential-helpers/releases/download/v0.6.3/docker-credential-pass-v0.6.3-amd64.tar.gz &&
+	tar -xf docker-credential-pass-v0.6.3-amd64.tar.gz &&
+	chmod +x docker-credential-pass &&
+	sudo mv docker-credential-pass /usr/local/bin/
 # sed -i '0,/{/s/{/{\n\t"credsStore": "pass",/' ~/.docker/config.json
 
 # DOCKER-COMPOSE
@@ -164,13 +165,13 @@ sudo tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
 
 # export PATH=$PATH:/usr/local/go/bin
 file=/etc/profile
-grep -q '^export PATH=$PATH:/usr/local/go/bin' $file && sed -i 's/^export PATH=$PATH:\/usr\/local\/go\/bin.*/export PATH=$PATH:\/usr\/local\/go\/bin/' $file || echo 'export PATH=$PATH:/usr/local/go/bin' >> $file
+grep -q '^export PATH=$PATH:/usr/local/go/bin' $file && sed -i 's/^export PATH=$PATH:\/usr\/local\/go\/bin.*/export PATH=$PATH:\/usr\/local\/go\/bin/' $file || echo 'export PATH=$PATH:/usr/local/go/bin' >>$file
 
 ### OPEN VPN 3
 sudo apt install apt-transport-https
 wget https://swupdate.openvpn.net/repos/openvpn-repo-pkg-key.pub
 sudo apt-key add openvpn-repo-pkg-key.pub
-DISTRO="focal" 
+DISTRO="focal"
 sudo wget -O /etc/apt/sources.list.d/openvpn3.list https://swupdate.openvpn.net/community/openvpn3/repos/openvpn3-$DISTRO.list
 sudo apt update
 sudo apt install openvpn3
@@ -188,6 +189,6 @@ sudo rm -rf /opt/adr-tools-3.0.0
 sudo mv adr-tools-3.0.0 /opt
 sudo chown -R root:root /opt/adr-tools-3.0.0
 
-grep -Pzo "(?s)### ADR BEGIN\n(.|\n)*### ADR END" || echo "\n### ADR BEGIN\n### ADR END" >> ~/.zshrc
+grep -Pzo "(?s)### ADR BEGIN\n(.|\n)*### ADR END" || echo "\n### ADR BEGIN\n### ADR END" >>~/.zshrc
 
 command='export PATH="/opt/adr-tools-3.0.0/src:$PATH"' perl -0p -i.bak -e 's/### ADR BEGIN\n(.|\n)*### ADR END/### ADR BEGIN\n$ENV{command}\n### ADR END/' ~/.zshrc

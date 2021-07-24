@@ -7,7 +7,6 @@ sed -i .bak 's/plugins=(.*)/\plugins=(git docker docker-compose task kubectl sud
 sed -i .bak 's/ZSH_THEME=".*"/\ZSH_THEME="ys"/' ~/.zshrc
 sed -i .bak 's/DISABLE_UPDATE_PROMPT=".*"/\DISABLE_UPDATE_PROMPT="true"/' ~/.zshrc
 
-
 ##########################
 # add/update lines at top of .zshrc
 ##########################
@@ -16,9 +15,9 @@ sed -i .bak 's/DISABLE_UPDATE_PROMPT=".*"/\DISABLE_UPDATE_PROMPT="true"/' ~/.zsh
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
 
 grep -qxF "### ZSHRC TOP BEGIN
-### ZSHRC TOP END" ~/.zshrc || cat <<< "### ZSHRC TOP BEGIN
+### ZSHRC TOP END" ~/.zshrc || cat <<<"### ZSHRC TOP BEGIN
 ### ZSHRC TOP END
-$(cat ~/.zshrc)" > ~/.zshrc
+$(cat ~/.zshrc)" >~/.zshrc
 
 command='''
 if type brew &>/dev/null; then
@@ -36,7 +35,7 @@ ZSH_DISABLE_COMPFIX="true"
 # add/update lines at bottom of .zshrc
 ##########################
 grep -qxF "### ZSHRC BOTTOM BEGIN
-### ZSHRC BOTTOM END" ~/.zshrc || echo "\n### ZSHRC BOTTOM BEGIN\n### ZSHRC BOTTOM END" >> ~/.zshrc
+### ZSHRC BOTTOM END" ~/.zshrc || echo "\n### ZSHRC BOTTOM BEGIN\n### ZSHRC BOTTOM END" >>~/.zshrc
 
 command='''
 if command -v pyenv 1>/dev/null 2>&1; then
