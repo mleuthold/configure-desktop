@@ -51,6 +51,7 @@ brew install minica # create your own self signed SSL certificate
 brew install pre-commit
 brew install go
 brew install postgresql # for psycopg2
+brew install openssl # https://github.com/psycopg/psycopg2/issues/1200
 
 brew install pipx &&
 	pipx ensurepath
