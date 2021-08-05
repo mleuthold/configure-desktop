@@ -50,6 +50,7 @@ brew install jq
 brew install minica # create your own self signed SSL certificate
 brew install pre-commit
 brew install go
+brew install postgresql # for psycopg2
 
 brew install pipx &&
 	pipx ensurepath
