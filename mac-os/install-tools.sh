@@ -75,6 +75,10 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg" &&
 	sudo installer -pkg AWSCLIV2.pkg -target /
 
+curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/mac/session-manager-plugin.pkg" -o "session-manager-plugin.pkg" &&
+	sudo installer -pkg session-manager-plugin.pkg -target / &&
+	ln -s /usr/local/sessionmanagerplugin/bin/session-manager-plugin /usr/local/bin/session-manager-plugin
+
 # TASKFILE completion
 git clone https://github.com/sawadashota/go-task-completions.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/task || true
 # Enable it in your .zshrc by adding it to your plugin list and reloading the completion:
