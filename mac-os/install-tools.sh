@@ -53,6 +53,8 @@ brew install go
 brew install postgresql # for psycopg2
 brew install openssl # https://github.com/psycopg/psycopg2/issues/1200
 brew install yq
+brew install earthly/earthly/earthly && 
+	earthly bootstrap
 
 brew install pipx &&
 	pipx ensurepath
