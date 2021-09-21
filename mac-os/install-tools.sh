@@ -39,8 +39,7 @@ brew install tfenv &&
 	MY_TERRAFORM_VERSION="0.15.3" &&
 	tfenv install "$MY_TERRAFORM_VERSION" &&
 	tfenv use "$MY_TERRAFORM_VERSION"
-brew tap alextodicescu/tgenv &&
-	brew install tgenv &&
+brew install tgenv &&
 	MY_TERRAGRUNT_VERSION="0.29.3" &&
 	tgenv install "$MY_TERRAGRUNT_VERSION"
 # brew install apache-spark # contains Hadoop libraries v3.2
