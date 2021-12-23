@@ -87,6 +87,10 @@ parquet_tools(){
 	docker run --rm --workdir /data -it -v $(pwd):/data nathanhowell/parquet-tools "$@"
 }
 
+jupyter_lab(){
+	 docker run --rm -p 10000:8888 -e JUPYTER_ENABLE_LAB=yes -v "$HOME":/home/jovyan/work -v "$HOME/Documents/jupyter/.jupyter":/home/jovyan/.jupyter jupyter/pyspark-notebook:spark-3.1.1
+}
+
 # For a ipython notebook and pyspark integration
 if which pyspark > /dev/null; then
   export SPARK_HOME="$(brew --prefix apache-spark)/libexec"
@@ -104,7 +108,7 @@ docker_free_space(){
 
 PYTHONDONTWRITEBYTECODE=1
 
-alias yawsso="$HOME/.pyenv/versions/default/bin/yawsso"
-alias awsume=". $HOME/.pyenv/versions/default/bin/awsume"
-alias awsumepy="$HOME/.pyenv/versions/default/bin/awsumepy"
+# alias yawsso="$HOME/.local/bin/yawsso"
+# alias awsume=". $HOME/.local/bin/awsume"
+# alias awsumepy="$HOME/.local/bin/awsumepy"
 ''' perl -0p -i.bak -e 's/### ZSHRC BOTTOM BEGIN\n(.|\n)*### ZSHRC BOTTOM END/### ZSHRC BOTTOM BEGIN\n$ENV{command}\n### ZSHRC BOTTOM END/' ~/.zshrc
