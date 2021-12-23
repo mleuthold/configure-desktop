@@ -54,7 +54,7 @@ jdk 11
 
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export CLOUDSDK_PYTHON="$HOME/.pyenv/versions/3.8.9/bin/python"
+export CLOUDSDK_PYTHON="$HOME/.pyenv/versions/cloud_sdk/bin/python"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
@@ -103,4 +103,8 @@ docker_free_space(){
 }
 
 PYTHONDONTWRITEBYTECODE=1
+
+alias yawsso="$HOME/.pyenv/versions/default/bin/yawsso"
+alias awsume=". $HOME/.pyenv/versions/default/bin/awsume"
+alias awsumepy="$HOME/.pyenv/versions/default/bin/awsumepy"
 ''' perl -0p -i.bak -e 's/### ZSHRC BOTTOM BEGIN\n(.|\n)*### ZSHRC BOTTOM END/### ZSHRC BOTTOM BEGIN\n$ENV{command}\n### ZSHRC BOTTOM END/' ~/.zshrc
