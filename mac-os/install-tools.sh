@@ -8,10 +8,11 @@ brew install --cask amethyst
 brew install tmux # in iTerm2 configure: tmux attach || tmux new
 (brew install pyenv || brew upgrade pyenv) &&
 	source ~/.zshrc &&
-	pyenv install --skip-existing 3.8.9 &&
-	pyenv install --skip-existing 3.9.4 &&
-	pyenv install --skip-existing anaconda3-2020.11 &&
-	pyenv global anaconda3-2020.11/envs/ana202105_py38
+	pyenv install --skip-existing 3.7.12 &&
+	pyenv virtualenv 3.7.12 cloud_sdk || true &&
+	pyenv install --skip-existing 3.10.1 &&
+	pyenv virtualenv 3.10.1 default || true &&
+	pyenv global default
 brew install pyenv-virtualenv || brew upgrade pyenv-virtualenv
 brew tap AdoptOpenJDK/openjdk &&
 	brew install --cask adoptopenjdk8 &&
