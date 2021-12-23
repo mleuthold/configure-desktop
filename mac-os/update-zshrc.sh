@@ -101,4 +101,6 @@ export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 docker_free_space(){
 	docker system prune --all --force --volumes
 }
+
+PYTHONDONTWRITEBYTECODE=1
 ''' perl -0p -i.bak -e 's/### ZSHRC BOTTOM BEGIN\n(.|\n)*### ZSHRC BOTTOM END/### ZSHRC BOTTOM BEGIN\n$ENV{command}\n### ZSHRC BOTTOM END/' ~/.zshrc
