@@ -70,6 +70,8 @@ pipx install awsume &&
 
 pipx install yawsso
 
+pipx install black pylint
+
 curl -sSL https://install.python-poetry.org | python3 -
 
 # Oh-My-Zsh
