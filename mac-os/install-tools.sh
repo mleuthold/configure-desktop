@@ -24,7 +24,6 @@ brew install --cask google-cloud-sdk &&
 	gcloud config set survey/disable_prompts True &&
 	gcloud config set component_manager/disable_update_check True
 brew install telnet
-brew install --cask fly # CONCOURSE
 brew install fortune
 brew install cowsay
 brew install figlet
