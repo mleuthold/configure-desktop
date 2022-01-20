@@ -106,7 +106,7 @@ docker_free_space(){
 	docker system prune --all --force --volumes
 }
 
-PYTHONDONTWRITEBYTECODE=1
+export PYTHONDONTWRITEBYTECODE=1
 
 # alias yawsso="$HOME/.local/bin/yawsso"
 # alias awsume=". $HOME/.local/bin/awsume"
