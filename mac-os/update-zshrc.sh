@@ -92,11 +92,11 @@ jupyter_lab(){
 }
 
 # For a ipython notebook and pyspark integration
-if which pyspark > /dev/null; then
-  export SPARK_HOME="$(brew --prefix apache-spark)/libexec"
-  export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/build:$PYTHONPATH
-  #export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$PYTHONPATH
-fi
+#if which pyspark > /dev/null; then
+#  export SPARK_HOME="$(brew --prefix apache-spark)/libexec"
+#  export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/build:$PYTHONPATH
+#  #export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$PYTHONPATH
+#fi
 
 # make psycopg2 installable on BigSur
 export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
