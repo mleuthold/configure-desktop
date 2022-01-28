@@ -60,11 +60,10 @@ source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 
 # AWS AUTOCOMPLETER
 autoload bashcompinit && bashcompinit
-complete -C '/usr/local/bin/aws_completer' aws
+complete -C /usr/local/bin/aws_completer aws
 export AWS_PAGER=""
 
 # fix locale on MacOS for Python
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -82,13 +81,17 @@ vault_sso(){
 	export VAULT_TOKEN="$(vault login -method=oidc -token-only -no-store)"
 }
 
-
 parquet_tools(){
 	docker run --rm --workdir /data -it -v $(pwd):/data nathanhowell/parquet-tools "$@"
 }
 
 jupyter_lab(){
-	 docker run --rm -p 10000:8888 -e JUPYTER_ENABLE_LAB=yes -v "$HOME":/home/jovyan/work -v "$HOME/Documents/jupyter/.jupyter":/home/jovyan/.jupyter jupyter/pyspark-notebook:spark-3.1.1
+   docker run -it --rm \
+   -p 8888:8888 \
+   --user root \
+   -e GRANT_SUDO=yes \
+   -v "$HOME":/home/jovyan/work \
+   jupyter/pyspark-notebook:spark-3.2.0
 }
 
 # For a ipython notebook and pyspark integration
