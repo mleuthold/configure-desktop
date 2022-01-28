@@ -1,19 +1,19 @@
 # prerequisite
 xcode-select --install || true
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+brew --version || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew update
 
 # install tools
 brew install --cask amethyst
 brew install tmux # in iTerm2 configure: tmux attach || tmux new
-(brew install pyenv || brew upgrade pyenv) &&
-	source ~/.zshrc &&
+brew install pyenv || brew upgrade pyenv
+brew install pyenv-virtualenv || brew upgrade pyenv-virtualenv
+source ~/.zshrc &&
 	pyenv install --skip-existing 3.7.12 &&
 	pyenv virtualenv 3.7.12 cloud_sdk || true &&
 	pyenv install --skip-existing 3.10.1 &&
 	pyenv virtualenv 3.10.1 default || true &&
 	pyenv global default
-brew install pyenv-virtualenv || brew upgrade pyenv-virtualenv
 brew tap AdoptOpenJDK/openjdk &&
 	brew install --cask adoptopenjdk8 &&
 	brew install --cask adoptopenjdk11
@@ -28,7 +28,7 @@ brew install fortune
 brew install cowsay
 brew install figlet
 brew install lolcat
-brew install helm
+# brew install helm
 brew tap johanhaleby/kubetail && brew install kubetail
 brew install zsh-syntax-highlighting
 brew tap hashicorp/tap &&
@@ -36,13 +36,13 @@ brew tap hashicorp/tap &&
 brew install mysql
 brew install parquet-tools
 brew install tfenv &&
-	MY_TERRAFORM_VERSION="0.15.3" &&
+	MY_TERRAFORM_VERSION="1.1.0" &&
 	tfenv install "$MY_TERRAFORM_VERSION" &&
 	tfenv use "$MY_TERRAFORM_VERSION"
 
 brew tap sigsegv13/tgenv &&
 	brew install tgenv &&
-	MY_TERRAGRUNT_VERSION="0.29.3" &&
+	MY_TERRAGRUNT_VERSION="0.36.0" &&
 	tgenv install "$MY_TERRAGRUNT_VERSION"
 # brew install tgenv &&
 # 	MY_TERRAGRUNT_VERSION="0.29.3" &&
@@ -61,23 +61,21 @@ brew install earthly/earthly/earthly &&
 	earthly bootstrap
 brew install watch
 
+# PIPX
 brew install pipx &&
 	pipx ensurepath
 
 pipx install awsume &&
 	awsume-configure --shell zsh --autocomplete-file ~/.zshrc --alias-file ~/.zshrc
-
 pipx install yawsso
-
 pipx install black pylint
 
-curl -sSL https://install.python-poetry.org | python3 -
+# install tools without brew
 
-# Oh-My-Zsh
+# Poetry
+curl -sSL https://install.python-poetry.org | python3 -
 mkdir -p $ZSH_CUSTOM/plugins/poetry
 poetry completions zsh >$ZSH_CUSTOM/plugins/poetry/_poetry
-
-# install tools without brew
 
 # OH-MY-ZSH
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
