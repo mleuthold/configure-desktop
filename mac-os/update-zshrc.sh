@@ -94,6 +94,18 @@ jupyter_lab(){
    jupyter/pyspark-notebook:spark-3.2.0
 }
 
+jupyter_lab_custom(){
+   docker run -it --rm \
+   -p 8888:8888 \
+   -p 4040:4040 \
+   --user root \
+   -e GRANT_SUDO=yes \
+   -e AWS_PROFILE=$AWS_PROFILE \
+   -v "$HOME/.aws":/home/jovyan/.aws \
+   -v "$HOME":/home/jovyan/work \
+   local.io/mleuthold/jupyter/pyspark-notebook:spark-3.2.0
+}
+
 # For a ipython notebook and pyspark integration
 #if which pyspark > /dev/null; then
 #  export SPARK_HOME="$(brew --prefix apache-spark)/libexec"
@@ -110,8 +122,4 @@ docker_free_space(){
 }
 
 export PYTHONDONTWRITEBYTECODE=1
-
-# alias yawsso="$HOME/.local/bin/yawsso"
-# alias awsume=". $HOME/.local/bin/awsume"
-# alias awsumepy="$HOME/.local/bin/awsumepy"
 ''' perl -0p -i.bak -e 's/### ZSHRC BOTTOM BEGIN\n(.|\n)*### ZSHRC BOTTOM END/### ZSHRC BOTTOM BEGIN\n$ENV{command}\n### ZSHRC BOTTOM END/' ~/.zshrc
