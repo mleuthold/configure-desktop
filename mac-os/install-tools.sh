@@ -60,6 +60,8 @@ brew install yq
 brew install earthly/earthly/earthly && 
 	earthly bootstrap
 brew install watch
+brew install nvm
+
 
 # PIPX
 brew install pipx &&
