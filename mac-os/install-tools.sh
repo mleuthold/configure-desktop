@@ -61,6 +61,7 @@ brew install earthly/earthly/earthly &&
 	earthly bootstrap
 brew install watch
 brew install nvm
+brew install kubernetes-cli
 
 
 # PIPX
