@@ -63,6 +63,9 @@ brew install watch
 brew install nvm
 brew install kubernetes-cli
 
+brew install terraform-docs
+# terraform-docs completion zsh > /usr/local/share/zsh/site-functions/_terraform-docs
+# autoload -U compinit && compinit
 
 # PIPX
 brew install pipx &&
