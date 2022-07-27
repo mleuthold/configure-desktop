@@ -62,6 +62,7 @@ brew install earthly/earthly/earthly &&
 brew install watch
 brew install nvm
 brew install kubernetes-cli
+brew install jfrog-cli
 
 brew install terraform-docs
 # terraform-docs completion zsh > /usr/local/share/zsh/site-functions/_terraform-docs
