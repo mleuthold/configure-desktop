@@ -76,6 +76,7 @@ pipx install awsume &&
 	awsume-configure --shell zsh --autocomplete-file ~/.zshrc --alias-file ~/.zshrc
 pipx install yawsso
 pipx install black pylint
+pipx install dbx
 
 # install tools without brew
 
