@@ -82,7 +82,7 @@ pipx install dbx
 
 # Poetry
 # curl -sSL https://install.python-poetry.org | python3 -
-pipx install poetry==1.2.0rc2
+pipx install poetry==1.2.0
 mkdir -p $ZSH_CUSTOM/plugins/poetry
 poetry completions zsh >$ZSH_CUSTOM/plugins/poetry/_poetry
 
