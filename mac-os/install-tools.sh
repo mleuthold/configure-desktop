@@ -35,18 +35,6 @@ brew tap hashicorp/tap &&
 	(brew install hashicorp/tap/vault || brew upgrade hashicorp/tap/vault)
 brew install mysql
 brew install parquet-tools
-brew install tfenv &&
-	MY_TERRAFORM_VERSION="1.1.0" &&
-	tfenv install "$MY_TERRAFORM_VERSION" &&
-	tfenv use "$MY_TERRAFORM_VERSION"
-
-brew tap sigsegv13/tgenv &&
-	brew install tgenv &&
-	MY_TERRAGRUNT_VERSION="0.36.0" &&
-	tgenv install "$MY_TERRAGRUNT_VERSION"
-# brew install tgenv &&
-# 	MY_TERRAGRUNT_VERSION="0.29.3" &&
-# 	tgenv install "$MY_TERRAGRUNT_VERSION"
 # brew install apache-spark # contains Hadoop libraries v3.2
 brew install wget
 brew install maven
