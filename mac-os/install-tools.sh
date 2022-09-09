@@ -52,6 +52,13 @@ brew install nvm
 brew install kubernetes-cli
 brew install jfrog-cli
 
+# TERRAFORM
+curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | bash
+tfswitch 1.2.8
+
+curl -L https://raw.githubusercontent.com/warrensbox/tgswitch/release/install.sh | bash
+tgswitch 0.38.9
+
 brew install terraform-docs
 # terraform-docs completion zsh > /usr/local/share/zsh/site-functions/_terraform-docs
 # autoload -U compinit && compinit
