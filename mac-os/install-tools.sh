@@ -102,3 +102,6 @@ mkdir -p ~/bin
 
 # SUBLIME 3
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl || true
+
+# auto push new branches
+git config --global --add --bool push.autoSetupRemote true
