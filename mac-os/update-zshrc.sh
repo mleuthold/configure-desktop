@@ -55,8 +55,8 @@ jdk 11
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export CLOUDSDK_PYTHON="$HOME/.pyenv/versions/cloud_sdk/bin/python"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
 # AWS AUTOCOMPLETER
 autoload bashcompinit && bashcompinit
