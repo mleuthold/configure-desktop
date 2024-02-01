@@ -51,6 +51,8 @@ brew install watch
 brew install nvm
 brew install kubernetes-cli
 brew install jfrog-cli
+brew tap databricks/tap
+brew install databricks
 
 # TERRAFORM
 curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | bash
