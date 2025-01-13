@@ -53,6 +53,7 @@ brew install kubernetes-cli
 brew install jfrog-cli
 brew tap databricks/tap
 brew install databricks
+brew install Azure/kubelogin/kubelogin
 
 # TERRAFORM
 curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | bash
