@@ -55,6 +55,19 @@ brew tap databricks/tap
 brew install databricks
 brew install Azure/kubelogin/kubelogin
 
+# docker free setup
+brew install docker
+brew install docker-compose
+brew install docker docker-credential-helper
+brew install docker-buildx 
+brew install colima
+# and then check in your `~/.docker/config.json` about these values
+	# "credsStore": "osxkeychain",
+	# "currentContext": "colima",
+ #    "cliPluginsExtraDirs": [
+ #              "/opt/homebrew/lib/docker/cli-plugins"
+ #      ]
+
 # TERRAFORM
 curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | bash
 tfswitch 1.2.8
